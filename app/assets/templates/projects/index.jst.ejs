@@ -1,0 +1,10 @@
+<h3>Project Index</h3>
+
+<div class="projectsIndex">
+	<ul>
+		<% collection.each( function(project) { %>
+			<li><%= project.escape('title') %></li>
+		<% }) %>
+	</ul>
+
+</div>

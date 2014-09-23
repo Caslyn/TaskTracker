@@ -8,10 +8,11 @@
 	</head>
 	<body>
 		<%= render partial: "layouts/headers" %>
-		<!-- consider moving the main div configuration to root.html.erb -->
 		<div class="backdrop jumbotron">
 			<div id="main">
+
 				<%= yield %>
+			
 			</div>
 		</div>
 	</body>

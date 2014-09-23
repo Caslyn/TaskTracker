@@ -1,5 +1,5 @@
 module Api
-	class ProjectController < ApplicationController
+	class ProjectsController < ApplicationController
 
 		def new
 		end

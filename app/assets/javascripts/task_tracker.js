@@ -4,7 +4,8 @@ window.TaskTracker = {
   Views: {},
   Routers: {},
   initialize: function() {
-
+  	new TaskTracker.Routers.Router({ $rootEl: $('div#main') });
+  	Backbone.history.start();
   }
 };
 
