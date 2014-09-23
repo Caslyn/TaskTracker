@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.sortable
 //= require underscore
+//= require jquery.serialize.json
 //= require backbone
 //= require bootstrap
 //= require task_tracker
