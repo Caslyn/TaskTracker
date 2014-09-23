@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.sortable
 //= require underscore
-//= require jquery.serialize.json
+//= require jquery.serializejson
 //= require backbone
 //= require bootstrap
 //= require task_tracker
