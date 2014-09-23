@@ -1,21 +1,24 @@
-<h1>Sign Up</h1>
 
-<form action="<%= users_url %>" method="post">
-	<input type="hidden" name="authenticity_token"
-				 value="<%= form_authenticity_token %>">
+<div id="sign-up-form">
+	<h1>Sign Up</h1>
 
-	<label for="new-user-email">Enter Email</label>
-	<input name="user[email]" type="text" id="new-user-email"
-				 value="<%= @user.email %>"><br>
+	<form action="<%= users_url %>" method="post">
+		<input type="hidden" name="authenticity_token"
+					 value="<%= form_authenticity_token %>">
 
-	<label for"new-user-password">Enter Password</label>
-	<input name="user[password]" type="password" 
-				 id="new-user-password"><br>
+		<label for="new-user-email">Enter Email</label>
+		<input name="user[email]" type="text" id="new-user-email"
+					 value="<%= @user.email %>"><br>
 
-	<button type="button" class="btn btn-primary">Sign Up</button>
+		<label for"new-user-password">Enter Password</label>
+		<input name="user[password]" type="password" 
+					 id="new-user-password"><br>
 
-</form>
+		<button type="button" class="btn btn-primary">Sign Up</button>
 
-<% content_for(:auth_button) do %>
-	<%= button_to "Sign In", new_session_url, method: :get %>
-<% end %>
+	</form>
+
+	<% content_for(:auth_button) do %>
+		<%= button_to "Sign In", new_session_url, method: :get %>
+	<% end %>
+</div>
