@@ -8,10 +8,6 @@ class User < ActiveRecord::Base
 	attr_reader :password
 	after_initialize :ensure_session_token
 
-	def gravatar_url
-		"http://www.gravatar.com/avatar/#{ Digest::MD5.hexdigest(email) }"
-	end
-
 	def password=(password)
 		@password = password
 		self.password_digest = BCrypt::Password.create(password)

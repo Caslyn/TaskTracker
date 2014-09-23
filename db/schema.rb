@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20140923051709) do
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
+    t.string   "name"
     t.string   "password_digest", null: false
     t.string   "session_token"
-    t.string   "gravatar_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
