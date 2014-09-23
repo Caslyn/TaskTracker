@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TaskTracker</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<% if current_user %>
-		<%= button_to "Sign Out", session_url, method: :delete %>
-		<h3 class="name-display"><%= current_user.name || current_user.email %></h3>
-	<% end %>
-
-	<% if flash[:errors] %>
-		<ul>
-			<% flash[:errors].each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-		</ul>
-	<% end %>
-	
-<%= yield %>
-
-</body>
+	<head>
+	  <title>TaskTracker</title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render partial: "layouts/headers" %>
+		<!-- consider moving the main div configuration to root.html.erb -->
+		<div class="backdrop jumbotron">
+			<div id="main">
+				<%= yield %>
+			</div>
+		</div>
+	</body>
 </html>

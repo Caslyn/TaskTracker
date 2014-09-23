@@ -12,6 +12,10 @@
 	<input name="user[password]" type="password" 
 				 id="new-user-password"><br>
 
-	<button>Sign Up</button>
+	<button type="button" class="btn btn-primary">Sign Up</button>
 
 </form>
+
+<% content_for(:auth_button) do %>
+	<%= button_to "Sign In", new_session_url, method: :get %>
+<% end %>

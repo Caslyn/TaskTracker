@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+
+
+@import "bootstrap";
+@import "font-awesome";
+
+body {
+	background-color: #6096bd
+}
+
+#main {
+	margin-top: 25px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar, div.indiv-board {
+	background-color: white;
+
+}
+
+a.navbar-brand {
+	font-weight: bold;
+}
