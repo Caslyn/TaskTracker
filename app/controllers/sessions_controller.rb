@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
 		if @user 
 			sign_in_user!(@user)
-			redirect_to user_url(@user)
+			redirect_to "/#/projects"
 		else
 			flash.now[:errors] = ["Invalid email and/or password"]
 			render :new

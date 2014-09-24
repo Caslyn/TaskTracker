@@ -1,10 +1,13 @@
-<h3>Project Index</h3>
 
-<div class="projectsIndex">
-	<ul>
+<div class="projectsIndex col-md-5">
+	<h3>Projects</h3>
+	<div class="project-list">
 		<% collection.each( function(project) { %>
-			<li><%= project.escape('title') %></li>
+			<div class="panel panel-default"
+				<div class="project-board panel-body">
+					<a href="#/projects/<%= project.id %>"><%= project.escape('title') %></a>
+				</div>
+			</div>
 		<% }) %>
-	</ul>
-
+	</div>
 </div>

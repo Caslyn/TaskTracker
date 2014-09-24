@@ -21,26 +21,6 @@ body {
 	padding-top: 70px
 }
 
-.navbar-collapse {
-	margin-top: 15px;
-}
-
-#sign-up-title {
-	margin-top: 0px
-}
-
-.auth-title {
-	margin-bottom: 15px
-}
-
-.dialog-box {
-	background-color: rgb(233, 233, 233);
-	height: 285px;
-	width: 333px;
-	vertical-align: baseline;
-	padding: 25px 30px;
-}
-
 #main {
 	margin-top: 25px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -48,6 +28,10 @@ body {
 
 .navbar, div.indiv-board {
 	background-color: white;
+
+	a {
+		font-weight: bold;
+	}
 }
 
 .brand-centered{
@@ -55,6 +39,3 @@ body {
   left: 43%;
 }
 
-a.navbar-brand {
-	font-weight: bold;
-}

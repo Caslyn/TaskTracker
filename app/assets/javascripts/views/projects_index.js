@@ -5,6 +5,11 @@ TaskTracker.Views.ProjectsIndex = Backbone.View.extend({
 
 	initialize: function() {
 		this.listenTo(this.collection, 'sync', this.render);
+
+    $('body').css('background-color', '#eeeeee');
+    $('.navbar').css({'background-color':'#6096bd'});
+    $('a').css({'color': 'white'});
+
 	},
 
 	render: function() {
