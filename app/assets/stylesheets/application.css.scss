@@ -21,12 +21,26 @@ body {
 	padding-top: 70px
 }
 
-.enter-app {
-	float: left
+.navbar-collapse {
+	margin-top: 15px;
 }
 
-form#sign-up-form, form#sign-in-form {
+#sign-up-title {
+	margin-top: 0px
+}
 
+.auth-title {
+	margin-bottom: 15px
+}
+
+.dialog-box {
+	background-color: rgb(233, 233, 233);
+	height: 285px;
+	width: 333px;
+	vertical-align: baseline;
+	padding: 25px 30px;
+	margin-left: auto;
+	margin-right: auto
 }
 
 #main {
@@ -36,7 +50,11 @@ form#sign-up-form, form#sign-in-form {
 
 .navbar, div.indiv-board {
 	background-color: white;
+}
 
+.brand-centered{
+  position: absolute;
+  left: 43%;
 }
 
 a.navbar-brand {

@@ -10,8 +10,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			sign_in_user!(@user)
-			# eventually change to users project index
-			redirect_to user_url(@user)
+			redirect_to root_url
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			render :new
