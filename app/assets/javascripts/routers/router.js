@@ -1,7 +1,7 @@
 TaskTracker.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"" : "homepage",
-		"/projects": "index",
+		"projects": "index",
 		"projects/:id": "show"
 	},
 
@@ -15,6 +15,7 @@ TaskTracker.Routers.Router = Backbone.Router.extend({
 	},
 
 	index: function() {
+		TaskTracker.Collections.projects.fetch();
 		var indexView = new TaskTracker.Views.ProjectsIndex({
 			collection: TaskTracker.Collections.projects
 		});

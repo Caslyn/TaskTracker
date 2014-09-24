@@ -3,7 +3,9 @@ TaskTracker.Views.ProjectsIndex = Backbone.View.extend({
 
 	events: {},
 
-	initialize: function() {},
+	initialize: function() {
+		this.listenTo(this.collection, 'sync', this.render);
+	},
 
 	render: function() {
 		var renderedContent = this.template({

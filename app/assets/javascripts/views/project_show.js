@@ -2,6 +2,8 @@ TaskTracker.Views.ProjectShow = Backbone.View.extend({
 	template: JST["projects/show"],
 
 	initialize: function() {
+		this.collection = this.model.stories();
+
 		this.listenTo(this.model, "add sync", this.render);
 	},
 

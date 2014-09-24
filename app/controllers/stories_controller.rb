@@ -14,6 +14,12 @@ module Api
 			end
 		end
 
+		def show
+			@story = Story.find(params[:id])
+			@project = @story.project_id
+			redirect_to api_project_url(@project)
+		end
+
 		private
 
 		def current_project
