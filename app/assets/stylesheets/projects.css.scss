@@ -2,4 +2,46 @@
 	background-color: white;
 	height: 138px;
 	padding: 15px;
+	width: 438px;
+}
+
+.projects-index {
+	float: left
+
+}
+
+.panel {
+	float: left;
+}
+
+.panel-heading {
+	background-color: rgb(153, 153, 153);
+}
+
+.panel-body {
+	background-color: rgb(174, 182, 185);
+	height: 100%;
+ }
+
+
+.page-header {
+	background-color: #eeeeee;
+	width: 100%
+}
+
+.tracker-container {
+	background-color: white;
+	position: absolute;
+	vertical-align: baseline;
+	margin-left: 0px;
+	height: 100%;
+	width: 1281px;
+	overflow: scroll;
+}
+
+.tracker-box {
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	min-width: 300px;
 }

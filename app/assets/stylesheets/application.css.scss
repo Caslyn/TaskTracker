@@ -18,24 +18,54 @@
 
 body {
 	background-color: #6096bd;
-	padding-top: 70px
+	padding-top: 70px;
+	margin: 0px;
+	padding: 0px;
+	height: 100%
 }
 
 #main {
-	margin-top: 25px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-top: 50px;
 }
 
-.navbar, div.indiv-board {
+.navbar  {
 	background-color: white;
+	position: fixed;
 
 	a {
 		font-weight: bold;
 	}
 }
 
+.navbar-btn {
+	margin-right: 25px;
+}
+
 .brand-centered{
   position: absolute;
   left: 43%;
 }
+
+body.signed-in {
+	background-color: #eeeeee;
+}
+
+.signed-in .navbar {
+	background-color: #6096bd 
+}
+
+.signed-in a.navbar {
+	color: white
+}
+
+
+
+
+
+
+
+
+
+
 
