@@ -18,7 +18,7 @@
 
 	</form>
 
-	<% content_for(:auth_button) do %>
-		<%= button_to "Sign In", new_session_url, method: :get %>
+	<% content_for :auth_button do %>
+		<%= link_to "Sign In", new_session_url, method: :get %>
 	<% end %>
 </div>

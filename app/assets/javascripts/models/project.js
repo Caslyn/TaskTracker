@@ -6,7 +6,7 @@ TaskTracker.Models.Project = Backbone.Model.extend({
 		if (!this._stories) {
 			this._stories = new TaskTracker.Collections.Stories([], { project: this })
 		}
-		returh this._stories;
+		return this._stories;
 	},
 	// fills up #stories  
 	parse: function(response) {

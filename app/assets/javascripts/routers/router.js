@@ -1,11 +1,17 @@
 TaskTracker.Routers.Router = Backbone.Router.extend({
 	routes: {
-		"": "index",
+		"" : "homepage",
+		"/projects": "index",
 		"projects/:id": "show"
 	},
 
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl
+	},
+
+	homepage: function() {
+		var homeView = new TaskTracker.Views.HomePage({});
+		this._swapView(homeView);
 	},
 
 	index: function() {
