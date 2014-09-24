@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-
+ruby '2.0.0'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.5'
 gem 'font-awesome-rails'
 
 
@@ -48,7 +48,7 @@ gem 'bcrypt'
 
 group :development do
 	gem 'annotate'
-  gem 'better_errors'
+  gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'debugger'

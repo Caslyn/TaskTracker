@@ -3,10 +3,18 @@ TaskTracker.Models.Project = Backbone.Model.extend({
 	
 	// all of the project's stories
 	stories: function() {
+		if (!this._stories) {
+			this._stories = new TaskTracker.Collections.Stories([], { project: this })
+		}
+		returh this._stories;
 	},
 	// fills up #stories  
-	parse: function() {
-
+	parse: function(response) {
+		if (response.stories) {
+			this.stories().set(resepon.stories, { parse : true });
+			delete response.stories;
+		}
+		return response;
 	},
 
 	// methods which return all stories associated with a tracker
