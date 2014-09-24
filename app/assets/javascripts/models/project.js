@@ -21,7 +21,7 @@ TaskTracker.Models.Project = Backbone.Model.extend({
 	done: function() {
 		return this.stories().where({ tracker: "done" });
 	},
-	current: function() {
+	curr: function() {
 		return this.stories().where({ tracker: "current" });
 	},
 	backlog: function() {
