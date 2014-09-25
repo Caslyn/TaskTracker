@@ -1,23 +1,41 @@
-<div class="page-header">
-	<h3><%= project.escape('title') %></h3>
+<div class="project-show page-header">
+	<h3 id="show-greeting"><%= project.escape('title') %></h3>
+	<div class="btn-group dropdown">
+<!-- 		<button type="button" class="btn btn-default">Done</button> -->
+		<button type="button" class="btn btn-default">Current</button>
+		<button type="button" class="btn btn-default">Backlog</button>
+		<button type="button" class="btn btn-default">Icebox</button>
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">More<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu pull-right" role="menu">
+			<li><a role="menu-item">Done</a></li>
+		</ul>
+	</div>
 </div>
-
 
 <div class="tracker-container well well-lg">
 	<div class="tracker-box panel panel-default">
-		<div class="panel-heading"></div>
+		<div class="panel-heading">
+			<p>Done</p>
+		</div>
 		<div class="panel-body" id="done-box"> </div>
 	</div>
 	<div class="tracker-box panel panel-default">
-		<div class="panel-heading"></div>
+		<div class="panel-heading">
+			<p>Current</p>
+		</div>
 		<div class="panel-body" id="current-box" > </div>
 	</div>
 	<div class="tracker-box panel panel-default">
-		<div class="panel-heading"></div>
+		<div class="panel-heading">
+			<p>Backlog</p>
+		</div>
 		<div class="panel-body" id="backlog-box"> </div>
 	</div>
 	<div class="tracker-box panel panel-default">
-		<div class="panel-heading"></div>	
+		<div class="panel-heading">
+			<p>Icebox</p>
+		</div>	
 		<div class="panel-body" id="icebox-box"> </div>
 	</div>
 </div>
