@@ -20,6 +20,12 @@ module Api
 			redirect_to api_project_url(@project)
 		end
 
+		def destroy
+			@story = Story.find(params[:id])
+			@story.try(:destroy)
+			render json: {}
+		end
+
 		private
 
 		def current_project

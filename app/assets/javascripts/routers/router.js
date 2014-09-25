@@ -2,12 +2,12 @@ TaskTracker.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"" : "dashboard",
 		"projects": "index",
+		"projects/new" : "create",
 		"projects/:id": "show"
 	},
 
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl
-
 	},
 
 	dashboard: function() {
@@ -24,6 +24,15 @@ TaskTracker.Routers.Router = Backbone.Router.extend({
 			collection: TaskTracker.Collections.projects
 		});
 		this._swapView(indexView);
+	},
+
+	create: function() {
+		var newProject = new TaskTracker.Models.Project();
+		var newView = new TaskTracker.Views.ProjectForm({
+			collection: TaskTracker.Collections.projects,
+			model: newProject,
+		});
+		this._swapView(newView);
 	},
 
 	show: function(id) {

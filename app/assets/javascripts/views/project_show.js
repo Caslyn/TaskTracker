@@ -2,38 +2,54 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	template: JST["projects/show"],
 
 	events: {
-		"click .tracker-btn": "toggleView"
+		"click .tracker-btn": "toggleView",
+		"click .add-story" : "addStory"
 	},
 
 	initialize: function() {
 		this.collection = this.model.stories();
+		this.projectId = "project#" + this.model.id;
+
 		this.listenTo(this.model, 'add sync', this.render);
+		this.listenTo(this.collection, 'remove', this.removeStory)
 		this.listenTo(this.collection, 'add', this.renderStories);
+
+		// populate active tracker divs
+		if (window.localStorage.getItem(this.projectId)) {
+			this.activeTrackers = window.localStorage.getItem(this.projectId).split(',');
+		} else {
+			this.activeTrackers = ['icebox','backlog','current'];
+		}
 	},
 
-	setViews: function() {
-		for (var key in window.localStorage) {
-			var $trackerBox = $('.tracker-container').find('.' + key);
-			$trackerBox.addClass('hidden');
+	setViews: function() {	
+		if (this.activeTrackers.length > 0) {
+			this.activeTrackers.forEach(function(trackerId) {
+				var $trackerBox = $('.tracker-container').find('.' + trackerId);
+				$trackerBox.addClass('active');
+			});
 		}
 	},
 
 	toggleView: function(event) {
-
 		event.preventDefault;
-		var $trackerId = $(event.currentTarget).attr('id');
-		var $trackerBox = $('.tracker-container').find('.' + $trackerId)
+		var trackerId = $(event.currentTarget).attr('id');
+		var trackerBox = $('.tracker-container').find('.' + trackerId)
+		var tIndex = this.activeTrackers.indexOf(trackerId);
 
-		if (window.localStorage.getItem($trackerId)) {
-			window.localStorage.removeItem($trackerId);
-			$trackerBox.removeClass('hidden');
+		if (tIndex >= 0) {
+			this.activeTrackers.splice(tIndex, 1);
+			var updatedTrackers = this.activeTrackers.join(',');
+			window.localStorage.setItem(this.projectId, updatedTrackers);
+			trackerBox.removeClass('active');
 		} else {
-			window.localStorage.setItem($trackerId, 'hidden');
-			$trackerBox.addClass('hidden');
+			this.activeTrackers.push(trackerId);
+			var updatedTrackers = this.activeTrackers.join(',')
+			window.localStorage.setItem(this.projectId, updatedTrackers);
+			trackerBox.addClass('active');
 		}
 	},
 
-	// Consider subviews
 	render: function() {
 		var renderedContent = this.template({
 			project: this.model
@@ -85,5 +101,31 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.fillBacklog();
 		this.fillCurrent();
 		this.fillDone();
+	},
+
+	addStory: function(event) {
+		event.preventDefault();
+	},
+
+	removeStory: function(story) {
+		var subview = _.find(
+			this.subviews('.story-container'), function(subview) {
+				return subview.child.model === story;
+			});
+		debugger;
+		this.removeSubview('.story-container', subview);
 	}
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
