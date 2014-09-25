@@ -1,6 +1,6 @@
 TaskTracker.Routers.Router = Backbone.Router.extend({
 	routes: {
-		"" : "homepage",
+		"" : "dashboard",
 		"projects": "index",
 		"projects/:id": "show"
 	},
@@ -10,14 +10,17 @@ TaskTracker.Routers.Router = Backbone.Router.extend({
 
 	},
 
-	homepage: function() {
-		var homeView = new TaskTracker.Views.HomePage({});
-		this._swapView(homeView);
+	dashboard: function() {
+		TaskTracker.Collections.projects.fetch();
+		var dashboardView = new TaskTracker.Views.Dashboard({
+			collection: TaskTracker.Collections.projects
+		});
+		this._swapView(dashboardView);
 	},
 
 	index: function() {
 		TaskTracker.Collections.projects.fetch();
-		var indexView = new TaskTracker.Views.ProjectsIndex({
+		var indexView = new TaskTracker.Views.ProjectIndex({
 			collection: TaskTracker.Collections.projects
 		});
 		this._swapView(indexView);

@@ -1,5 +1,5 @@
-TaskTracker.Views.ProjectsIndex = Backbone.View.extend({
-	template: JST["projects/index"],
+TaskTracker.Views.Dashboard = Backbone.View.extend({
+	template: JST["dashboard"],
 
 	events: {},
 

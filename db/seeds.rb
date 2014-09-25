@@ -13,7 +13,7 @@ user3 = User.create({ email: "hall@oates.com", password: "poptastic" })
 user4 = User.create({ email: "simon@garfunkel.com", password: "anothergoodone" })
 
 project1 = Project.create({title: 'alleviate hunger', user_id: 1})
-project2 = Project.create({title: 'enjoy the good life', user_id: 1})
+project2 = Project.create({title: 'get real', user_id: 1})
 project3 = Project.create({title: 'buy caslyn presents', user_id: 2})
 project4 = Project.create({title: 'sing catchy songs', user_id: 3})
 project5 = Project.create({title: 'sing melodious songs', user_id: 4})
@@ -23,8 +23,8 @@ story1 = Story.create({ project_id: 1, title: 'find food',
 										description: "sandwiches", tracker: "icebox",
 										ord: 0})
 
-story2 = Story.create({ project_id: 2, title: 'mo money less problems', 
-										description: "find way to make lots of money", tracker: "icebox",
+story2 = Story.create({ project_id: 2, title: 'really real', 
+										description: "money money", tracker: "icebox",
 										ord: 0})
 
 story3 = Story.create({ project_id: 3, title: 'go to store', 

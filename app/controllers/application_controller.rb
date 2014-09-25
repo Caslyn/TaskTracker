@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :redirect_home
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -25,6 +25,10 @@ class ApplicationController < ActionController::Base
 
   def require_signed_in
   	redirect_to new_session_url unless signed_in?
+  end
+
+  def redirect_home
+    redirect_to root_url if signed_in?
   end
 
 end

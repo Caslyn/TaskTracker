@@ -1,0 +1,16 @@
+<div class="projects-index col-md-5">
+	<h3 id="dashboard-greeting">Projects</h3>
+	<span><a href="#/projects">Show all</a></span>
+	<div class="project-list">
+		<% collection.each( function(project) { %>
+			<div class="project-board panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><a href="#/projects/<%= project.id %>"><%= project.escape('title') %></a></h3>
+			</div>
+			<div class="panel-body">
+
+			</div>
+			</div>
+		<% }) %>
+	</div>
+</div>
