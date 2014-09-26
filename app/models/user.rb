@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
 	validates :email, uniqueness: true
 
 	has_many :projects
-	has_many :stories, through: :projects
+	has_many :project_memberships
+	# has_many :tracker_assignments
 
 	attr_reader :password
 	after_initialize :ensure_session_token

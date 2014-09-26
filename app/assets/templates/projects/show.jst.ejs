@@ -1,50 +1,25 @@
 <div class="project-show page-header">
 	<h3 id="show-greeting"><%= project.escape('title') %></h3>
-	<div class="btn-group dropdown">
-		<button type="button" class="btn btn-default tracker-btn" 
-						id="current">Current</button>
-		<button type="button" class="btn btn-default tracker-btn"
-						id="backlog">Backlog</button>
-		<button type="button" class="btn btn-default tracker-btn"
-						id="icebox">Icebox</button>
-		<button type="button" class="btn btn-default dropdown-toggle" 
-						data-toggle="dropdown">More<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu pull-right" role="menu">
-			<li><a role="menu-item" class="tracker-btn"
-						 id="done">Done</a></li>
-		</ul>
+	<div class="btn-group">
+		<button type="button" class="btn btn-default tracker-btn" id="done">Done</button>
+		<button type="button" class="btn btn-default tracker-btn" id="current">Current</button>
+		<button type="button" class="btn btn-default tracker-btn" id="backlog">Backlog</button>
+		<button type="button" class="btn btn-default tracker-btn" id="icebox">Icebox</button>
+
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="more-options">
+	    More <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+	    <li><a class="create-tracker" href="#">Create Tracker</a></li>
+	  </ul>
+
 	</div>
 	<button class="add-story">Add Story</button>
 </div>
 
-<div class="tracker-container well well-lg">
-	<div class="tracker-box panel panel-default done">
-		<div class="panel-heading">
-			<p>Done</p>
-		</div>
-		<div class="story-container panel-body"><div id="done-box"></div></div>
-	</div>
-	<div class="tracker-box panel panel-default current">
-		<div class="panel-heading">
-			<p>Current</p>
-		</div>
-		<div class="story-container panel-body"><div id="current-box"></div></div>
-	</div>
-	<div class="tracker-box panel panel-default backlog">
-		<div class="panel-heading">
-			<p>Backlog</p>
-		</div>
-		<div class="story-container panel-body"><div id="backlog-box"></div></div>
-	</div>
-	<div class="tracker-box panel panel-default icebox">
-		<div class="panel-heading">
-			<p>Icebox</p>
-		</div>	
-		<div class="story-container panel-body">
-			<div id="icebox-box">
-				<div class="new-story-form"></div>
-			</div>
-		</div>
-	</div>
+<div id="tracker-form" class="row"></div>
+
+<div class="tracker-box row">
+
 </div>
+

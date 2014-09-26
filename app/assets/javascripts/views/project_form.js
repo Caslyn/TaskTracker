@@ -13,9 +13,11 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 
 	submit: function(event) {
 		event.preventDefault();
-		var title = this.$('#project-title-input').val();
+		var title = this.$('#title-input').val();
+		var description = this.$('#description-input').val();
 		var params = {
 			title: title,
+			description: description
 		}
 
 		function success() {

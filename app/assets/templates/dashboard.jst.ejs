@@ -6,15 +6,14 @@
 		<% collection.each( function(project) { %>
 			<div class="project-board panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title"><a href="#/projects/<%= project.id %>"><%= project.escape('title') %></a></h3>
-				<button class="destroy" data-id="<%= project.id %>"></button>
+				<h3 class="project-title panel-title"><a href="#/projects/<%= project.id %>"><%= project.escape('title') %></a></h3>
+				<button class="destroy btn btn-default btn-sm" data-id="<%= project.id %>">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>
 			</div>
 			<div class="panel-body">
-
 			</div>
 			</div>
 		<% }) %>
 	</div>
 </div>
-
-

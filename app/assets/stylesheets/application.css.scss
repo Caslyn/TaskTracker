@@ -13,6 +13,7 @@
  */
 
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 
@@ -23,15 +24,19 @@ body {
 	height: 100%
 }
 
+body.signed-in {
+	background-color: #eeeeee;
+}
+
 #main, #welcomepage {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin-top: 55px;
+	margin-top: 100px;
 }
 
 .navbar  {
 	background-color: white;
-	position: fixed;
 	margin-bottom: 0px;
+	height: 75px;
 
 	a {
 		font-weight: bold;
@@ -47,9 +52,6 @@ body {
   left: 43%;
 }
 
-body.signed-in {
-	background-color: #eeeeee;
-}
 
 .signed-in .navbar {
 	background-color: #6096bd 

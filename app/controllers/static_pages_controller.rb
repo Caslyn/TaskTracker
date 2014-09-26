@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-	
 	def root
 		if signed_in?
 		 render :root

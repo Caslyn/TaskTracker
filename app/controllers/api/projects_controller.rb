@@ -15,13 +15,18 @@ module Api
 		end
 
 		def index
-			@projects = current_user.projects
+			@projects = current_user ? current_user.projects : {}
 			render json: @projects
 		end
 
 		def show
-			@project = Project.find(params[:id])
-			render :show
+			@project = Project.includes(:members).find(params[:id])
+
+			if @project.is_member?(current_user)
+				render :show
+			else
+				render json: ["You are not a member of this project"]
+			end
 		end
 
 		def destroy
@@ -33,7 +38,7 @@ module Api
 		private
 
 		def project_params
-			params.require(:project).permit(:title)
+			params.require(:project).permit(:title, :description)
 		end
 	end	
 end

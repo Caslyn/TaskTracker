@@ -1,43 +1,4 @@
-
 // Project Show
-
-.tracker-container {
-	background-color: white;
-	position: absolute;
-	margin-left: 0px;
-	padding: 7px;
-	height: 100%;
-	width: 100%;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	vertical-align: baseline;
-}
-
-.tracker-container .panel {
-	float: left;
-	height: 100%;
-	width: 305px;
-	position: relative;
-}
-
-.tracker-box {
-	padding: 0px;
-	margin-left: 2px;
-	margin-right: 2px
-}
-
-.tracker-box .panel-heading {
-	background-color: rgb(153, 153, 153);
-	height: 25px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-
-.tracker-box .panel-body {
-	padding: 0px;
-	border: 1px black solid;
-	text-align: center;
-}
 
 .project-show.page-header {
 	background-color: #eeeeee;
@@ -46,19 +7,5 @@
 	padding-left: 10px;
 }
 
-
-#done-box, #current-box, #backlog-box, #icebox-box {
-	height: 100%;
-	background-color: #c2c2c2
-}
-
-// tracker toggle
-.tracker-box {
-	display: none;
-}
-
-.tracker-container .active {
-	display: block;
-}
 
 
