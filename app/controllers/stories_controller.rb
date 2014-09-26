@@ -32,7 +32,7 @@ module Api
 			if params[:id]
 				@story = Story.find(params[:id])
 				@project = @story.project
-			elsif params[:project]
+			elsif params[:story][:project_id]
 				@project = Project.find(params[:story][:project_id])
 			end	
 		end

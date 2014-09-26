@@ -3,7 +3,7 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 	events: {
 		"click .tracker-btn": "toggleView",
-		"click .add-story" : "addStory"
+		"click .add-story" : "createStory"
 	},
 
 	initialize: function() {
@@ -11,7 +11,7 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.projectId = "project#" + this.model.id;
 
 		this.listenTo(this.model, 'add sync', this.render);
-		this.listenTo(this.collection, 'remove', this.removeStory)
+		this.listenTo(this.collection, 'remove', this.removeStory);
 		this.listenTo(this.collection, 'add', this.renderStories);
 
 		// populate active tracker divs
@@ -103,17 +103,35 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.fillDone();
 	},
 
-	addStory: function(event) {
-		event.preventDefault();
+	createStory: function() {
+		var newStory = new TaskTracker.Models.Story()
+		this.newStoryForm = new TaskTracker.Views.StoryForm({
+			model: newStory,
+			collection: this.collection
+		});
+		this.addSubview('.new-story-form', this.newStoryForm)
+	},
+
+	// adds story show view to page & subviews
+	addStory: function(story) {
+		var storyView = new TaskTracker.Views.StoryShow({
+			model: story
+		});
+		this.removeSubview('#icebox-box', this.newStoryForm)
 	},
 
 	removeStory: function(story) {
-		var subview = _.find(
-			this.subviews('.story-container'), function(subview) {
-				return subview.child.model === story;
-			});
-		debugger;
-		this.removeSubview('.story-container', subview);
+		var storyContainer = $('.story-container').children()
+		for (var i = 0; i < storyContainer.length; i++) {
+			var trackerBox = storyContainer[i].id;
+			var selector = this.subviews()['#' + trackerBox]
+			if (selector) {
+				var storyView = _.find(selector, function(subview) {
+					return subview.model == story 
+				});
+			}
+		}
+		this.removeSubview('#' + trackerBox, storyView);
 	}
 })
 
