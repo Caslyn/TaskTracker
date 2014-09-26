@@ -15,8 +15,9 @@
 			<button type="button submit" class="btn btn-primary">Sign In</button>
 		</form>
 	</div>
+	
 	<% content_for :auth_button do %>
-		<div class="entry=link">
+		<div class="entry-link">
 			<%= link_to "Sign Up", new_user_url, method: :get%>
 		</div>
 	<% end %>

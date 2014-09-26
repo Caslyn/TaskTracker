@@ -25,8 +25,10 @@ TaskTracker.Views.StoryForm = Backbone.View.extend({
 			ord: 0,
 		};
 		this.model.set(params);
+		debugger;
 		this.collection.create(this.model, {
 			wait: true
 		});
 	}
+
 })
