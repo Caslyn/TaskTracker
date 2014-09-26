@@ -17,6 +17,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.tracker-hidden {
+	display: none;
+}
+
 body {
 	background-color: #6096bd;
 	margin: 0px;
