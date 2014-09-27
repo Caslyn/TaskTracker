@@ -6,6 +6,7 @@ TaskTracker.Routers.Router = Backbone.Router.extend({
     "projects/:id": "projectShow"
   },
 
+
   initialize: function(options) {
     this.$rootEl = options.$rootEl
   },
@@ -35,11 +36,23 @@ TaskTracker.Routers.Router = Backbone.Router.extend({
     this._swapView(newView);
   },
 
+  defaultTrackers: function(view) {
+    view.collection.create({project_id: view.model.id, title: "icebox", visible: true},
+      { wait: true });
+    view.collection.create({project_id: view.model.id, title: "backlog", visible: true},
+          { wait: true });
+    view.collection.create({project_id: view.model.id, title: "current", visible: true},
+          { wait: true });
+    view.collection.create({project_id: view.model.id, title: "done", visible: true},
+          { wait: true });
+  },
+
   projectShow: function(id) {
     var project = TaskTracker.Collections.projects.getOrFetch(id);
     var showView = new TaskTracker.Views.ProjectShow({
       model: project
     });
+    this.defaultTrackers(showView);
     this._swapView(showView);
   },
 

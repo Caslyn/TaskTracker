@@ -31,7 +31,7 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		trackerModel = _.find(this.collection.models, function(tmodel) {
 			return tmodel.attributes.id === trackerView.data('tracker-id')
 		});
-		
+
 		trackerModel.set({ visible: !(trackerModel.attributes.visible) });
 		trackerModel.save();
 	},
