@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :signed_in?, :redirect_home
+  helper_method :current_user, :signed_in?, :redirect_home, :require_project_member!
   protect_from_forgery with: :exception
 
   def current_user

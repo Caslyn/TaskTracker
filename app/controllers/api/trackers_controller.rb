@@ -1,6 +1,5 @@
 module Api
 	class TrackersController < ApplicationController
-		before_action :require_project_member!
 
 		def create
 			@tracker = current_project.trackers.new(tracker_params)
@@ -34,7 +33,7 @@ module Api
 				@tracker = Tracker.find(params[:id])
 				@project = @tracker.project
 			elsif params[:tracker]
-				@project = Tracker.find(params[:tracker][:project_id])
+				@project = Project.find(params[:tracker][:project_id])
 			end
 		end
 

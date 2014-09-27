@@ -4,24 +4,22 @@ Backbone.LinkFormView = Backbone.View.extend({
 	events: {
 		'click a': 'showForm',
 		'click .close': 'hideForm',
-		'submit' : 'create',
+		'click .create' : 'create',
 		'keydown textarea' : 'triggerCreate'
 	},
 
 	render: function() {
-		var renderedContent;
-		if (this.formShowing) {
-			renderedContent = "";
-		}  else {
-			renderedContent = this.formTemplate();
-		}
+		var renderedContent = this.formTemplate();
 		this.$el.html(renderedContent);
 		this.delegateEvents();
 		return this;
 	},
 
+
+
 	hideForm: function() {
-		this.formShowing = true;
+		this.$el.addClass('hidden')
+		this.formShowing = false;
 		this.render();
 	},
 

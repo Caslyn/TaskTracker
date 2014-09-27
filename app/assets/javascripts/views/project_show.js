@@ -3,7 +3,6 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 	events: {
 		"click .tracker-btn": "toggleTracker",
-		"click .create-tracker" : "renderTrackerForm",
 	},
 
 	initialize: function() {
@@ -27,19 +26,11 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		var $currentTarget = $(event.currentTarget);
 		var trackerName = $currentTarget.attr('id');
 		var trackerView = $('.tracker-box').find('#' + trackerName);
-		trackerView.toggleClass('tracker-hidden');
+		trackerView.toggleClass('hidden');
 	},
 
 	renderTrackers: function() {
 		this.model.trackers().each(this.addTracker.bind(this));
-	},
-
-	renderTrackerForm: function(event) {
-		event.preventDefault();
-		var formView = new TaskTracker.Views.TrackerForm({
-			collection: this.collection
-		});
-		this.addSubview('#tracker-form', formView);
 	},
 
 	renderTrackers: function() {

@@ -1,6 +1,6 @@
 <div class="project-show page-header">
 	<h3 id="show-greeting"><%= project.escape('title') %></h3>
-	<div class="btn-group">
+	<div class="btn-group existing-trackers">
 		<button type="button" class="btn btn-default tracker-btn" id="done">Done</button>
 		<button type="button" class="btn btn-default tracker-btn" id="current">Current</button>
 		<button type="button" class="btn btn-default tracker-btn" id="backlog">Backlog</button>
@@ -10,11 +10,10 @@
 	    More <span class="caret"></span>
 	  </button>
 	  <ul class="dropdown-menu dropdown-menu-right" role="menu">
-	    <li><a class="create-tracker" href="#">Create Tracker</a></li>
+	    <li></li>
 	  </ul>
 
 	</div>
-	<button class="add-story">Add Story</button>
 </div>
 
 <div id="tracker-form" class="row"></div>

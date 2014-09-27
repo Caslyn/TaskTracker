@@ -1,6 +1,6 @@
 module Api
 	class StoriesController < ApplicationController
-		before_action :require_project_member!
+		# before_action :require_project_member!
 
 		def create
 			@story = current_tracker.stories.new(story_params)
