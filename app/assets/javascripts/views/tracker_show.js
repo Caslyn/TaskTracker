@@ -3,14 +3,6 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		return {'tracker-id': this.model.id};
 	},
 
-	className: function(){
-		if(this.model.get('hidden')){
-			return "tracker-hidden";
-		} else {
-			return "";
-		}
-	},
-
 	template: JST['trackers/show'],
 
 	events: {
@@ -19,13 +11,21 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 
 	initialize: function() {
 		this.collection = this.model.stories();
-		this.listenTo(this.model, 'change:title', this.render);
-		this.listenTo(this.collection, 'add', this.addStory);		
+		this.listenTo(this.model, 'change', this.render);
+		this.listenTo(this.collection, 'add', this.addStory);	
+	},
+
+	parseView: function(view) {
+		if (!this.model.attributes.visible) {
+			return view.replace('active', 'hidden')
+		} else {
+			return view
+		}
 	},
 
 	render: function() {
-		var renderedContent;
-		renderedContent = this.template({ tracker: this.model });
+		var renderedContent = this.template({ tracker: this.model });
+		renderedContent = this.parseView(renderedContent);
 		this.$el.html(renderedContent);
 		this.delegateEvents();
 		this.renderStories();
@@ -49,6 +49,5 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 
 	renderStories: function() {
 		this.model.stories().each(this.addStory.bind(this));
-		// this.$('.story-box').sortable( {connectWith: '.story-box'});
 	}
 });

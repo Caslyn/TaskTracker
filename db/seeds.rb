@@ -10,15 +10,25 @@ p2 = u2.projects.new(title: 'test title', description: 'test description', user_
 p1.save()
 p2.save()
 
-t1 = p1.trackers.new(project_id: p1.id, title: "icebox")
-t2 = p1.trackers.new(project_id: p1.id, title: "backlog")
-t3 = p1.trackers.new(project_id: p1.id, title: "current")
-t4 = p1.trackers.new(project_id: p1.id, title: "done")
+t1 = p1.trackers.new(project_id: p1.id, title: "icebox", visible: true)
+t2 = p1.trackers.new(project_id: p1.id, title: "backlog", visible: true)
+t3 = p1.trackers.new(project_id: p1.id, title: "current", visible: true)
+t4 = p1.trackers.new(project_id: p1.id, title: "done", visible: true)
+
+t5 = p2.trackers.new(project_id: p2.id, title: "icebox", visible: true)
+t6 = p2.trackers.new(project_id: p2.id, title: "backlog", visible: true)
+t7 = p2.trackers.new(project_id: p2.id, title: "current", visible: true)
+t8 = p2.trackers.new(project_id: p2.id, title: "done", visible: true)
 
 t1.save()
 t2.save()
 t3.save()
 t4.save()
+
+t5.save()
+t6.save()
+t7.save()
+t8.save()
 
 s1 = t1.stories.new(title: 'all i do is win', description: 'no matter what!', tracker_id: t1.id, ord: 0)
 s2 = t1.stories.new(title: 'oh hey', description: 'hi!', tracker_id: t1.id, ord: 1)

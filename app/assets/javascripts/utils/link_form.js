@@ -16,7 +16,6 @@ Backbone.LinkFormView = Backbone.View.extend({
 	},
 
 
-
 	hideForm: function() {
 		this.$el.addClass('hidden')
 		this.formShowing = false;

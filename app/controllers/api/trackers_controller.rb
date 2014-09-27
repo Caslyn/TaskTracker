@@ -38,7 +38,7 @@ module Api
 		end
 
 		def tracker_params
-			params.require(:tracker).permit(:title, :project_id)
+			params.require(:tracker).permit(:title, :project_id, :visible)
 		end
 	end
 end
