@@ -1,24 +1,17 @@
-<div class="project-show page-header">
-	<h3 id="show-greeting"><%= project.escape('title') %></h3>
-	<div class="btn-group existing-trackers">
-		<button type="button" class="btn btn-default tracker-btn" id="done">Done</button>
-		<button type="button" class="btn btn-default tracker-btn" id="current">Current</button>
-		<button type="button" class="btn btn-default tracker-btn" id="backlog">Backlog</button>
-		<button type="button" class="btn btn-default tracker-btn" id="icebox">Icebox</button>
-
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="more-options">
-	    More <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu dropdown-menu-right" role="menu">
-	    <li></li>
-	  </ul>
-
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand ">
+				<h3 id="show-greeting"><%= project.escape('title') %></h3>
+			</li>
+			<li><a href="#" class="add-story">Add Story</a></li>
+			<li><a href="#" class="tracker-btn" id="done">Done</a></li>
+			<li><a href="#" class="tracker-btn" id="current">Current</a></li>	
+			<li><a href="#" class="tracker-btn" id="backlog">Backlog</a></li>
+			<li><a href="#" class="tracker-btn" id="icebox">Icebox</a></li>	
+		</ul>
 	</div>
-</div>
 
-<div id="tracker-form" class="row"></div>
-
-<div class="tracker-box row">
+<div class="tracker-box row" id="page-content-wrapper">
 
 </div>
 

@@ -11,6 +11,15 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 		return this;
 	},
 
+	seedTrackers: function() {
+		trackers = arguments[0];
+		defaultTrackers = ["done", "current", "backlog", "icebox"];
+		for (var i = 0; i < defaultTrackers.length; i++) {
+			trackers.create({ project_id: this.model.id, title: defaultTrackers[i],
+												visible: true}, { wait: true });
+		};
+	 },
+
 	submit: function(event) {
 		event.preventDefault();
 		var title = this.$('#title-input').val();
@@ -21,12 +30,12 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 		}
 
 		function success() {
+			var collection = this.model.trackers()
+			this.seedTrackers.apply(this, [collection]);
 			Backbone.history.navigate("", { trigger: true });
 		};
 
 		this.model.set(params);
-		this.collection.create(this.model, { success: success });
- 
+		this.collection.create(this.model, {success: success.bind(this) });
 	},
-
 });

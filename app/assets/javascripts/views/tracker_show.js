@@ -6,10 +6,11 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	template: JST['trackers/show'],
 
 	events: {
-		"click .add-story" : "renderStoryForm", 
+		"click .add-story" : "renderStoryForm",
 	},
 
 	initialize: function() {
+		// Find out how to sort stories between trackers & within trackers
 		this.collection = this.model.stories();
 		this.listenTo(this.model, 'change', this.render);
 		this.listenTo(this.collection, 'add', this.addStory);	
@@ -22,7 +23,6 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 			return view
 		}
 	},
-
 	render: function() {
 		var renderedContent = this.template({ tracker: this.model });
 		renderedContent = this.parseView(renderedContent);
@@ -33,6 +33,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	},
 
 	renderStoryForm: function(event) {
+		debugger;
 		event.preventDefault();
 		var storyForm = new TaskTracker.Views.StoryForm({
 			collection: this.collection
@@ -40,14 +41,15 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		this.addSubview('.story-form', storyForm)
 	},
 
+	renderStories: function() {
+		this.model.stories().each(this.addStory.bind(this));
+	},
+
 	addStory: function(story) {
 		var newStoryView = new TaskTracker.Views.StoryShow({
 			model: story
 		});
-		this.addSubview('.story-box', newStoryView)
+		this.addSubview('.story-wrapper', newStoryView)
 	},
 
-	renderStories: function() {
-		this.model.stories().each(this.addStory.bind(this));
-	}
 });

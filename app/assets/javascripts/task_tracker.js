@@ -13,3 +13,4 @@ window.TaskTracker = {
 $(document).ready(function(){
   TaskTracker.initialize();
 });
+

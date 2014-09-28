@@ -3,17 +3,16 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 	events: {
 		"click .tracker-btn": "toggleTracker",
+		"click .add-story": "delegateStoryForm",
 	},
 
 	initialize: function() {
 		this.collection = this.model.trackers();
 		this.projectId = "project#" + this.model.id;
-		
 		this.listenTo(this.model, 'sync', this.render);
 		this.listenTo(this.collection, 'add', this.addTracker);
 		this.listenTo(this.collection, 'remove', this.removeTracker);
 	},
-
 
 	render: function() {
 		var renderedContent = this.template({ project: this.model }); 
@@ -42,7 +41,6 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 	renderTrackers: function() {
 		this.model.trackers().each(this.addTracker.bind(this));
-		// this.$(.'.tracker-box').sortable()
 	},
 
 	addTracker: function(tracker) {
@@ -52,7 +50,15 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.addSubview('.tracker-box', trackerView);
 	},
 
-	destroyTracker: function(tracker) {
-		// destroy tracker permanently
+	delegateStoryForm: function(event) {
+		event.preventDefault();
+		// find the icebox subview 
+		var iceboxView = _.find(this.subviews()[".tracker-box"], function(subview) {
+			return subview.model.attributes.title === "icebox"
+		});
+		debugger;
+		// below code does not actually triggeer event - consider marionette?
+		iceboxView.trigger(".add-story");
+
 	}
 });

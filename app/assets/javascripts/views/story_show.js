@@ -5,6 +5,9 @@ TaskTracker.Views.StoryShow = Backbone.View.extend({
 		// 'click': 'showModal'
 	},
 
+	initialize: function() {
+	},
+
 	attributes: function() {
 		return {
 			'data-story-id': this.model.id
