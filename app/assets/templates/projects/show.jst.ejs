@@ -1,13 +1,25 @@
-	<div id="sidebar-wrapper">
-		<ul class="sidebar-nav">
-			<li class="sidebar-brand ">
-				<h3 id="show-greeting"><%= project.escape('title') %></h3>
+	<div id="sidebar-wrapper" class="sidebar-nav">
+		<div class="sidebar-brand">
+			<h3 id="show-greeting"><%= project.escape('title') %></h3>
+		</div>
+
+		<div class="list-group-item btn btn-primary btn-lg add-story-sidebar">
+			<a href="#">Add Story</a>
+		</div>
+
+		<ul class="sidebar-list list-group">
+			<li class="list-group-item">
+				<a href="#" class="tracker-btn" id="done">Done</a>
 			</li>
-			<li><a href="#" class="add-story-sidebar">Add Story</a></li>
-			<li><a href="#" class="tracker-btn" id="done">Done</a></li>
-			<li><a href="#" class="tracker-btn" id="current">Current</a></li>	
-			<li><a href="#" class="tracker-btn" id="backlog">Backlog</a></li>
-			<li><a href="#" class="tracker-btn" id="icebox">Icebox</a></li>	
+			<li class="list-group-item">
+				<a href="#" class="tracker-btn" id="current">Current</a>
+			</li>	
+			<li class="list-group-item">
+				<a href="#" class="tracker-btn" id="backlog">Backlog</a>
+			</li>
+			<li class="list-group-item">
+				<a href="#" class="tracker-btn" id="icebox">Icebox</a>
+			</li>	
 		</ul>
 	</div>
 

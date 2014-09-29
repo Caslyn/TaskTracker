@@ -10,6 +10,8 @@
 	  <!-- nav bar options -->
     <ul class="nav navbar-nav navbar-signin">
     	<% if signed_in? %>
+	    	<li class="sign-out-link" ><a href="/session" data-method="delete" style="color:white">Sign Out</a></li>
+    		<li class="dashboard-link"><a href="" style="color:white">Dashboard</a></li>
     		<li class="dropdown">
   			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white">Projects<span class="caret"></span></a>
   			  <ul class="dropdown-menu" role="menu">
@@ -20,19 +22,18 @@
   			  	<% end %>
   			  </ul>
     		</li>
-    		<li class="dashboard-link"><a href="" style="color:white">Dashboard</a></li>
-  			<li class="sign-out-link" ><a href="/session" data-method="delete" style="color:white">Sign Out</a></li>
-
       <% elsif content_for :auth_button %>
       	  <div class="enter-app">
 			      <%= yield :auth_button %>
 			    </div>
 			 <% else %>
-			 <!-- sign in option -->
-			   <button type="button" class="btn btn-default btn-md" id="signin-link"><%= link_to "Sign In", new_session_url, :remote => true,
-			   				'data-toggle' => 'modal', 'data-target' => '#signInModal'   %></button>
-			  <!-- sign up option -->
-			 <button type="button" class="btn btn-default btn-md" id="signup-link"><%= link_to "Sign Up", new_user_url, :remote => true, 'data-toggle' => 'modal', 'data-target' => '#signUpModal' %></button>
+			 	<div class="auth-options" style="float:right; margin-top:25px; margin-right: 20px" >
+				 <!-- sign in option -->
+				   <button type="button" class="btn btn-default btn-md" id="signin-link"><%= link_to "Sign In", new_session_url, :remote => true,
+				   				'data-toggle' => 'modal', 'data-target' => '#signInModal'   %></button>
+				  <!-- sign up option -->
+				 <button type="button" class="btn btn-default btn-md" id="signup-link"><%= link_to "Sign Up", new_user_url, :remote => true, 'data-toggle' => 'modal', 'data-target' => '#signUpModal' %></button>
+				</div>
       <% end %>
     </ul>
 </nav>

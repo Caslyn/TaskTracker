@@ -102,10 +102,13 @@ body.signed-in {
 	}
 }
 
-.navbar-signin {
-	top: 18px;
-	left: 75%;
-	position: relative;
+ul.navbar-signin {
+	width: 100%;
+	
+	li {
+		top: 14px;
+		float: right;
+	}
 
 }
 
