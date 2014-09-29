@@ -69,6 +69,6 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	}
 });
 
-_.extend(TaskTracker.Views.ProjectShow.prototype, Backbone.OrdView);
+// _.extend(TaskTracker.Views.ProjectShow.prototype, Backbone.OrdView);
 
 

@@ -42,7 +42,6 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	},
 
 	renderStoryForm: function(event) {
-		debugger;
 		event.preventDefault();
 		var storyForm = new TaskTracker.Views.StoryForm({
 			collection: this.collection
@@ -92,4 +91,4 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	},
 });
 
-_.extend(TaskTracker.Views.TrackerShow.prototype, Backbone.OrdView);
+// _.extend(TaskTracker.Views.ProjectShow.prototype, Backbone.OrdView);

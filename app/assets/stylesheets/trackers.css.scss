@@ -1,5 +1,13 @@
 .tracker-box {
 	min-height: 100%;
+
+	.panel-heading {
+		background-color: rgb(57, 58, 60);
+
+		.panel-title {
+			color: white
+		}
+	}
 }
 
 .active {
@@ -7,5 +15,15 @@
 	float: left;
 	width: 265px;
 	margin: 2px;
-	height: 100%
+	height: 100%;
+	border: solid black 1px;
+}
+
+.add-story {
+ color: #bbb;
+ float: right;
+}
+
+.tracker-title {
+	display: inline-block
 }

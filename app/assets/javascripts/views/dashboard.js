@@ -2,7 +2,8 @@ TaskTracker.Views.Dashboard = Backbone.View.extend({
 	template: JST["dashboard"],
 
 	events: {
-		"click button.destroy": "removeProject"
+		"click button.destroy": "removeProject",
+		"click .dropdown-menu": "closeDropDown"
 	},
 
 	initialize: function() {
@@ -22,5 +23,9 @@ TaskTracker.Views.Dashboard = Backbone.View.extend({
 		var $currentTarget = $(event.currentTarget).data('id');
 		var model = this.collection.get($currentTarget);
 		model.destroy();
+	},
+
+	closeDropDown: function(event) {
+		event.stopPropagation();
 	}
 })

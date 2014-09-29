@@ -10,12 +10,17 @@
 #sidebar-wrapper {
 	float: left;
 	height: 100%;
+	min-height: 800px;
 	width: 200px;
 	background-color: #303333;
 
 }
 
-#show-greeting {
-	color: white
-}
+// #show-greeting {
+// 	color: white
+// }
 
+
+#dashboard-greeting {
+	color: #6096bd
+}

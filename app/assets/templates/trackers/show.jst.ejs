@@ -1,10 +1,7 @@
-<% if(tracker.attributes.title == "icebox") { %>
-	<button class="add-story">Add Story</button>
-<% } %>
-
 <div class="col-md-4 panel panel-default active" id="<%= tracker.escape('title') %>" data-tracker-id="<%= tracker.escape('id') %>">
 	<div class="panel-heading">
-		<h5 class="panel-title"><%= tracker.escape('title') %></h5>
+		<h5 class="tracker-title panel-title"><%= tracker.escape('title') %></h5>
+		<span class="glyphicon glyphicon-plus add-story"></span>
 	</div>
 	<div class="story-form"></div>
 	<div class="story-wrapper">

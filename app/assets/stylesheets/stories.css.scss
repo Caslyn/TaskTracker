@@ -10,4 +10,14 @@ button.add-story {
 .story-wrapper {
 	height: 100%;
 	min-height: 600px;
+	background-color: #bbb;
+}
+
+.story-title {
+	background-color: #e4eff7;
+	margin-bottom: 0px;
+	min-height: 44px;
+	display: block;
+	text-align: center;
+	border-color: white;
 }

@@ -39,3 +39,5 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 		this.collection.create(this.model, {success: success.bind(this) });
 	},
 });
+
+// _.extend(TaskTracker.Views.ProjectShow.prototype, Backbone.OrdView);
