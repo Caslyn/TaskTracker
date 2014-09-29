@@ -1,12 +1,10 @@
 TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
+	template: JST['trackers/show'],
+
 	orderOptions: {
 		modelElement: '.story-display',
 		modelName: 'story'
 	},
-
-	template: JST['trackers/show'],
-
-	className: 'story-display',
 
 	events: {
 		"click .add-story" : "renderStoryForm",
@@ -41,27 +39,34 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		return this;
 	},
 
+	onRender: function() {
+		this.$('.story-wrapper').sortable({ 
+			connectWith: '.story-wrapper'
+		});
+	},
+
 	renderStoryForm: function(event) {
-		debugger;
 		event.preventDefault();
 		var storyForm = new TaskTracker.Views.StoryForm({
 			collection: this.collection
 		});
 		this.addSubview('.story-form', storyForm)
+		this.listenTo(storyForm, 'remove', this.removeForm)
+	},
+
+	removeForm: function(form) {
+		this.removeSubview('.story-form', form);
 	},
 
 	renderStories: function() {
 		this.model.stories().each(this.addStory.bind(this));
-		this.$('.story-wrapper').sortable({ 
-			connectWith: '.story-wrapper'
-		})
 	},
 
 	addStory: function(story) {
 		var newStoryView = new TaskTracker.Views.StoryShow({
 			model: story
 		});
-		this.addSubview('.story-wrapper', newStoryView)
+		this.addSubview('.story-wrapper', newStoryView);
 	},
 
 	receiveStory: function(event, ui) {
@@ -87,9 +92,6 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	},
 
 	saveStories: function(event) {
-		event.stopPropagation();
-		this.saveOrds();
+		this.saveOrds(event);
 	},
 });
-
-_.extend(TaskTracker.Views.TrackerShow.prototype, TaskTracker.Utils.OrdView);

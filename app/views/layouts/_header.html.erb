@@ -21,7 +21,7 @@
   			  </ul>
     		</li>
     		<li class="dashboard-link"><a href="" style="color:white">Dashboard</a></li>
-  			<li class="sign-out-link" ><a href="/session" data-method="delete" style="color:white">Sign Out</li>
+  			<li class="sign-out-link" ><a href="/session" data-method="delete" style="color:white">Sign Out</a></li>
 
       <% elsif content_for :auth_button %>
       	  <div class="enter-app">
@@ -36,7 +36,7 @@
 
 
 <% if flash[:errors] %>
-	<div class="alert alert-warning alert-dismissible" role="alert">
+	<div class="alert alert-danger alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 		<%= flash[:errors].join("<br>").html_safe %>
 	</div>

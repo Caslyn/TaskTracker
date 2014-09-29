@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
+gem 'bootswatch-rails'
 
 gem 'rails', '4.1.5'
 gem 'font-awesome-rails'

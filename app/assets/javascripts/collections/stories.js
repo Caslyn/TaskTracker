@@ -6,6 +6,10 @@ TaskTracker.Collections.Stories = Backbone.Collection.extend({
 		this.tracker = options.tracker;
 	},
 
+	comparator: function() {
+		return this.get('ord');
+	},
+
 	getOrFetch: function(id) {
 		var story = this.get(id);
 		var stories = this;
@@ -18,5 +22,5 @@ TaskTracker.Collections.Stories = Backbone.Collection.extend({
 			story.fetch();
 		}
 		return story;
-	}
+	},
 })

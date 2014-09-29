@@ -20,6 +20,7 @@ Backbone.CompositeView = Backbone.View.extend({
 			view.$(selector).empty();
 			_(subviews).each(function (subview) {
 				view.attachSubview(selector, subview);
+				view.onRender && view.onRender();
 			});
 		});
 	},
@@ -44,11 +45,38 @@ Backbone.CompositeView = Backbone.View.extend({
 		});
 	},
 
-	// remove from subviews hash
 	removeSubview: function (selector, subview) {
-		subview.remove();
-		
+		subview.remove();		
 		var subviews = this.subviews(selector);
 		subviews.splice(subviews.indexOf(subview), 1);
+	},
+
+	onRender: function() {
+		var view = this;
+		_(this.subviews()).each(function (subviews, selector) {
+			_(subviews).each(function (subview) {
+				subview.onRender && subview.onRender();
+			});
+		});
+	},
+
+	saveOrds: function(event) {
+		// gather all elements and save their new ords to their index
+		var itemElements = $(this.$(this.orderOptions.modelElement).children());
+		var idAttr = this.orderOptions.modelName + '-id';
+		var collection = this.collection;
+
+		itemElements.each(function (index, element) {
+			// find out which tracker the element went to
+			var $itemElement = $(element);
+			var itemId = $itemElement.data(idAttr);
+			var item = collection.get(itemId);
+			if (item.get('ord') === index) {
+				return;
+			} else {
+				item.save({ ord: index });
+			}
+		}.bind(this));
 	}
+
 })

@@ -21,6 +21,6 @@ TaskTracker.Views.StoryForm = Backbone.LinkFormView.extend({
 			}, { wait: true });
 			this.$('#story-title').val('');
 			this.$('#story-description').val('');
-			this.hideForm();
+			this.trigger('remove', this);
 		}
 });

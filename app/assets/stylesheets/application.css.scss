@@ -14,7 +14,9 @@
 
 
 @import "bootstrap-sprockets";
+@import "bootswatch/lumen/variables";
 @import "bootstrap";
+@import "bootswatch/lumen/bootswatch";
 @import "font-awesome";
 
 
@@ -27,23 +29,32 @@ html {
 }
 
 body {
-	background-color: #6096bd;
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
 	overflow: hidden;
+
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 100%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(100%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 100%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 100%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 100%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 100%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
 }
 
 body.signed-in {
 	background-color: #F8FBFF;
-	
+
 	.navbar-brand {
 		color: white;
 	}
 }
 
 body.signed-in > nav {
-	background-color: #256188;
+	background-color: #2C3E50;
 }
 
 #main, #welcomepage {
@@ -54,10 +65,9 @@ body.signed-in > nav {
 }
 
 .navbar  {
-	background-color: white;
+	background-color: #EAF1F1;
 	margin-bottom: 0px;
 	height: 75px;
-	border: 1px solid #071924;
 
 	a.navbar-brand {
 		font-weight: bold;
@@ -92,6 +102,7 @@ body.signed-in > nav {
 	a {
 		color: white;
 	}
+
 }
 
 .navbar-btn {

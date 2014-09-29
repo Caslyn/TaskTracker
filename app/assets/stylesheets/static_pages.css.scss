@@ -7,7 +7,10 @@ ul.list-group {
 		display: inline-block;
 		padding: 0px;
 		margin: 5px;
-		border: 1px solid black;
+		-webkit-box-shadow: -7px 3px 29px 5px rgba(52,49,71,1);
+		-moz-box-shadow: -7px 3px 29px 5px rgba(52,49,71,1);
+		box-shadow: -7px 3px 29px 5px rgba(52,49,71,1);
+
 
 		h2 {
 			font-weight: bold;
