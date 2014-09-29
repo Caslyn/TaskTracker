@@ -1,22 +1,25 @@
 <div class="auth-form col-md-6 col-md-offset-4">
-	<div class="dialog-box">
+	<div class="signup-box">
 		<h3 class="auth-title" id="sign-up-title" >Start Using Tracker</h3>
 
-		<form action="<%= users_url %>" method="post">
+		<form role="form" action="<%= users_url %>" method="post">
 			<input type="hidden" name="authenticity_token"
 						 value="<%= form_authenticity_token %>">
-
-			<input name="user[name]" type="text" class="form-control"
-						 placeholder="Your Name" value="<%= @user.name %>"><br>
-
-			<input name="user[email]" type="text" class="form-control"
-						 placeholder="Email" value="<%= @user.email %>"><br>
-
-			<input name="user[password]" type="password" class="form-control" placeholder="password"><br>
-
-
-			<button type="button submit" class="btn btn-primary">Sign Up</button>
-
+			<div class="form-group">
+				<label for="name-input">Enter Your Name</label>
+				<input name="user[name]" type="text" class="form-control"
+							 placeholder="Name" value="<%= @user.name %>" id="name-input">
+			</div>
+			<div class="form-group">
+				<label for="email-input">Email Address</label>
+				<input name="user[email]" type="text" class="form-control"
+							 placeholder="Email" value="<%= @user.email %>" id="email-input">
+			</div>
+			<div class="form-group">
+				<label for="password-input">Enter a Password</label>
+				<input name="user[password]" type="password" class="form-control" placeholder="Password" id="password-input">
+			</div>
+			<button type="submit" class="btn btn-primary">Get Started</button>
 		</form>
 	</div>
 </div>

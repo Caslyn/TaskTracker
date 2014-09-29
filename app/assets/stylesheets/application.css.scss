@@ -17,6 +17,11 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+html {
+	height: 100%
+}
+
 .hidden {
 	display: none;
 }
@@ -26,15 +31,22 @@ body {
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
+	overflow: hidden;
 }
 
 body.signed-in {
 	background-color: #eeeeee;
 }
 
+body.signed-in > nav {
+	background-color: #256188;
+}
+
 #main, #welcomepage {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-top: 100px;
+	min-height: 800px;
+	height: 100%
 }
 
 .navbar  {
@@ -47,7 +59,6 @@ body.signed-in {
 		font-size: 30px;
 		padding-top: 25px;
 		position: absolute;
-  	left: 10%;
 	}
 }
 

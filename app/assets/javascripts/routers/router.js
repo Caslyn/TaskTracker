@@ -1,7 +1,7 @@
 TaskTracker.Routers.Router = Backbone.Router.extend({
   routes: {
-    "" : "home",
-    "/dashboard" : "dashboard",
+    "" : "dashboard",
+    "home" : "home",
     "projects": "projectIndex",
     "projects/new" : "projectCreate",
     "projects/:id": "projectShow"
