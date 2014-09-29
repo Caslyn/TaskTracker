@@ -1,19 +1,22 @@
-.auth-title {
-	margin-bottom: 15px
-}
+// .auth-title {
+// 	margin-bottom: 15px
+// }
 
-.auth-form {
-	position: relative;
-	margin-top: 60px;
-}
-
-.dialog-box {
-	background-color: rgb(233, 233, 233);
-	display: inline-block;
-	vertical-align: baseline;
-	padding: 30px 35px;
-}
+// .dialog-box {
+// 	background-color: rgb(233, 233, 233);
+// 	display: inline-block;
+// 	vertical-align: baseline;
+// 	padding: 30px 35px;
+// }
 
 .alert {
 	margin-top: 70px;
+}
+
+.modal-title, .modal-footer {
+	text-align: center;
+}
+
+.modal-dialog {
+	width: 400px;
 }

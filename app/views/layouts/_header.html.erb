@@ -28,8 +28,11 @@
 			      <%= yield :auth_button %>
 			    </div>
 			 <% else %>
-			   <button type="button" class="btn btn-default btn-md" id="signin-link"><%= link_to "Sign In", new_session_url %></button>
-			   <button type="button" class="btn btn-default btn-md" id="signup-link"><%= link_to "Sign Up", new_user_url %></button>
+			 <!-- sign in option -->
+			   <button type="button" class="btn btn-default btn-md" id="signin-link"><%= link_to "Sign In", new_session_url, :remote => true,
+			   				'data-toggle' => 'modal', 'data-target' => '#signInModal'   %></button>
+			  <!-- sign up option -->
+			 <button type="button" class="btn btn-default btn-md" id="signup-link"><%= link_to "Sign Up", new_user_url, :remote => true, 'data-toggle' => 'modal', 'data-target' => '#signUpModal' %></button>
       <% end %>
     </ul>
 </nav>

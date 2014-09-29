@@ -13,14 +13,17 @@
 	min-height: 800px;
 	width: 200px;
 	background-color: #303333;
-
+	border-radius: 5px;
 }
 
-// #show-greeting {
-// 	color: white
-// }
+.tracker-box {
+	margin-top: 75px;
+}
 
+#show-greeting {
+	color: white
+}
 
-#dashboard-greeting {
-	color: #6096bd
+.projects-index {
+	margin-top: 110px;
 }

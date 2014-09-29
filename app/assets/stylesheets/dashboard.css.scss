@@ -2,15 +2,22 @@
 	float: left;
 	height: 138px;
 	width: 436px;
-	background: white
+	background: white;
+
+
+-webkit-box-shadow: 2px 0px 12px 2px rgba(2,0,10,1);
+-moz-box-shadow: 2px 0px 12px 2px rgba(2,0,10,1);
+box-shadow: 2px 0px 12px 2px rgba(2,0,10,1);
 }
 
 .projects-index {
-	margin-top: 50px;
+	margin-top: 45px;
 }
 
 #dashboard-greeting {
-	display: inline
+	margin-right: 3px;
+	display: inline;
+	color: black;
 }
 
 button.destroy {
@@ -21,4 +28,25 @@ button.destroy {
 
 .project-title {
 	display: inline
+}
+
+.dashboard-header {
+	margin-bottom: 20px;
+
+}
+
+#all-projects {
+	margin-left: 15px;
+	color: #21608A;
+}
+
+#create-project {
+	margin-left: 150px;
+	color: white;
+	font-weight: normal;
+	background-color: #21608A;
+	border-bottom-color: #12354C;
+	border-radius: 5px;
+	border-bottom-width: 3px;
+
 }

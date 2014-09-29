@@ -9,6 +9,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	events: {
 		"click .add-story" : "renderStoryForm",
 		"sortremove": "removeStory",
+		"sortreceive": "receiveStory",
 		"sortstop" : "saveStories",
 	},
 

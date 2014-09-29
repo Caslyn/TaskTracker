@@ -1,4 +1,5 @@
 .tracker-box {
+	background-color: #212121;
 	min-height: 100%;
 
 	.panel-heading {
@@ -14,7 +15,7 @@
 	padding: 0px;
 	float: left;
 	width: 265px;
-	margin: 2px;
+	margin: 0px 2px;
 	height: 100%;
 	border: solid black 1px;
 }
@@ -27,3 +28,8 @@
 .tracker-title {
 	display: inline-block
 }
+
+.sidebar-nav  {
+	list-style-type: none;
+}
+

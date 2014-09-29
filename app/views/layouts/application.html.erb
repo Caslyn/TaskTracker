@@ -10,5 +10,21 @@
 		<%= render partial: "layouts/header" %>
 		<%= yield %>
 
+		<div class="modal fade" id="signInModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<%= render 'sessions/new' %>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="signUpModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<%= render 'users/new' %>
+				</div>
+			</div>
+		</div>
+
 	</body>
 </html>
