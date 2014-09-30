@@ -1,8 +1,9 @@
 .tracker-box {
 	background-color: #212121;
-	width: 1820px;
+	width: 1670px;
 	overflow: visible;
 	min-height: 100%;
+	// display: inline-block;
 
 	.panel-heading {
 		background-color: rgb(57, 58, 60);
@@ -29,8 +30,12 @@
 
 
 .add-story {
- color: #bbb;
+ color: #FFFAE7;
  float: right;
+}
+
+.add-story:hover {
+	color: #6096BD;
 }
 
 .tracker-title {

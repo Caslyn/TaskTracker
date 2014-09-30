@@ -29,6 +29,12 @@ module Api
 			render :show
 		end
 
+		def destroy
+			@story = Story.find(params[:id])
+			@story.destroy
+			render :show
+		end
+
 		private
 
 		def current_tracker

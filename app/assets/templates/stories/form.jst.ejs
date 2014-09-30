@@ -1,12 +1,24 @@
+<% if (model.attributes) { %>
+	<% title = model.attributes.title %>
+	<% description = model.attributes.description %>
+	<% action = "Save" %>
+<% } else { %>
+	<% title = "title" %>
+	<% description = "description" %>
+	<% action = "Add Story" %>
+<% } %>
 
 <div class="close-story-btn">
 	<button class="close btn btn-default">Close</button>
 </div>
+<span class="glyphicon glyphicon-trash delete-story"></span>
 <form class="form">
 	<div class="form-group">
-		<input type="text" id="story-title" class="form-control" placeholder="title">
-		<textarea id="description" class="form-control" placeholder="description"></textarea>
+		<input type="text" id="story-title" class="form-control" 
+					 placeholder="<%= title %>">
+		<textarea id="description" class="form-control" 
+							placeholder="<%= description %>"></textarea>
 	</div>
-	<button class="btn btn-success create">Add Story</button>
+	<button class="btn btn-success create"><%= action %></button>
 
 </form>

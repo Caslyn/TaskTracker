@@ -16,6 +16,7 @@
 	border-radius: 5px;
 	padding: 3px;
 	margin-right: 2px;
+	display: inline-block;
 }
 
 .tracker-box {
@@ -41,19 +42,51 @@
 
 .sidebar-list  {
 	margin-top: 15px;
+
+	a:hover {
+		color: #DCF0FC;
+		text-decoration: none;
+	}
 }
 
 .add-story-sidebar {
 	background-color: rgb(31, 106, 167);
 	margin-top: 5px;
-
-	border-bottom-color: black;
-	border-left-color: black;
-	border-right-color: black;
+	border-color: black;
+	text-align: center;
+	height: 60%;
 	
 	a {
 		font-weight: bold;
 		color: black;
+		text-decoration: none;
 	}
 }
 
+.glyphicon-plus {
+	color: #F6EADF ;
+	height: 70%;
+	margin-right: 5px;
+}
+
+.add-story-sidebar:hover {
+	background-color: #2FA2FF;
+
+	a {
+		color: #DCF0FC
+	}
+
+}
+
+.sidebar-list {
+
+	li {
+		background-color: #303333;
+		border-color: #1B1D1F;
+	}
+
+	span {
+		margin-right: 5px;
+		color: #A1A1A1;
+	}
+}

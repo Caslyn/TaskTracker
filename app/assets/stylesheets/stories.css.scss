@@ -23,6 +23,10 @@ button.add-story {
 	border-color: white;
 }
 
+.title {
+	text-decoration: none;
+}
+
 .close-story-btn {
 	display: inline-block;
 }
@@ -30,14 +34,22 @@ button.add-story {
 .story-form {
 	margin: 2px;
 
-background: rgb(251,234,203); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(251,234,203,1) 17%, rgba(252,237,220,1) 51%, rgba(251,234,203,1) 89%, rgba(251,234,203,1) 89%, rgba(251,234,203,1) 97%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(17%,rgba(251,234,203,1)), color-stop(51%,rgba(252,237,220,1)), color-stop(89%,rgba(251,234,203,1)), color-stop(89%,rgba(251,234,203,1)), color-stop(97%,rgba(251,234,203,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbeacb', endColorstr='#fbeacb',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 3px 2px 41px 2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 2px 41px 2px rgba(0,0,0,0.75);
+	box-shadow: 3px 2px 41px 2px rgba(0,0,0,0.75);
 
+	background: rgba(246,234,223,1);
+	background: -moz-linear-gradient(top, rgba(246,234,223,1) 0%, rgba(246,234,223,1) 33%, rgba(229,210,194,1) 51%, rgba(246,234,223,1) 71%, rgba(246,234,223,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(246,234,223,1)), color-stop(33%, rgba(246,234,223,1)), color-stop(51%, rgba(229,210,194,1)), color-stop(71%, rgba(246,234,223,1)), color-stop(100%, rgba(246,234,223,1)));
+	background: -webkit-linear-gradient(top, rgba(246,234,223,1) 0%, rgba(246,234,223,1) 33%, rgba(229,210,194,1) 51%, rgba(246,234,223,1) 71%, rgba(246,234,223,1) 100%);
+	background: -o-linear-gradient(top, rgba(246,234,223,1) 0%, rgba(246,234,223,1) 33%, rgba(229,210,194,1) 51%, rgba(246,234,223,1) 71%, rgba(246,234,223,1) 100%);
+	background: -ms-linear-gradient(top, rgba(246,234,223,1) 0%, rgba(246,234,223,1) 33%, rgba(229,210,194,1) 51%, rgba(246,234,223,1) 71%, rgba(246,234,223,1) 100%);
+	background: linear-gradient(to bottom, rgba(246,234,223,1) 0%, rgba(246,234,223,1) 33%, rgba(229,210,194,1) 51%, rgba(246,234,223,1) 71%, rgba(246,234,223,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6eadf', endColorstr='#f6eadf', GradientType=0 );
 
+}
+
+.delete-story {
+	display: block;
+	float: right;
 }

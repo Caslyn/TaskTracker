@@ -61,17 +61,19 @@ Backbone.CompositeView = Backbone.View.extend({
 	},
 
 	saveOrds: function(event) {
-		// gather all elements and save their new ords to their index
+		// All elements that fall under parent
 		var itemElements = $(this.$(this.orderOptions.modelElement).children());
 		var idAttr = this.orderOptions.modelName + '-id';
 		var collection = this.collection;
+		// Iterate over & compare index w/ ord attribute
 		itemElements.each(function (index, element) {
-			var $itemElement = $(element);
-			var itemId = $itemElement.data(idAttr);
+			var itemId = $(element).data(idAttr);
 			var item = collection.get(itemId);
 			var ord = item.get('ord');
+
 			if (ord === index) {
 				return;
+			// project_id attr indicates item is a Tracker
 			} else if (item.get('project_id')) {
 				var swapedEl = itemElements[ord];
 				itemElements[ord] = element;

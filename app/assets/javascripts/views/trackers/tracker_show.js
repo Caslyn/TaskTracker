@@ -14,10 +14,10 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	},
 
 	initialize: function() {
-		// Find out how to sort stories between trackers & within trackers
 		this.collection = this.model.stories();
 		this.listenTo(this.model, 'change', this.render);
-		this.listenTo(this.collection, 'add', this.addStory);	
+		this.listenTo(this.collection, 'add', this.addStory);
+		this.formShowing = false;
 	},
 
 	data: function(){
@@ -48,17 +48,22 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 
 	renderStoryForm: function(event) {
 		event.preventDefault();
+		// do not render story form twice
+		if (this.$('.story-form').html() !== "") {
+			return;
+		}
+
 		var storyForm = new TaskTracker.Views.StoryForm({
+			model: new TaskTracker.Models.Story(),
 			collection: this.collection
 		});
-		this.addSubview('.story-form', storyForm)
-		this.listenTo(storyForm, 'remove', this.removeForm)
+
+		this.$('.story-form').html(storyForm.render().$el);
 	},
 
 	removeForm: function(form) {
 		this.removeSubview('.story-form', form);
 	},
-
 	renderStories: function() {
 		this.model.stories().each(this.addStory.bind(this));
 	},

@@ -3,22 +3,27 @@
 			<h3 id="show-greeting"><%= project.escape('title') %></h3>
 		</div>
 
-		<div class="list-group-item btn btn-primary btn-lg add-story-sidebar">
+		<div class="list-group-item add-story-sidebar">
+			<span class="glyphicon glyphicon-plus	"></span>
 			<a href="#">Add Story</a>
 		</div>
 
 		<ul class="sidebar-list list-group">
 			<li class="list-group-item">
-				<a href="#" class="tracker-btn" id="done">Done</a>
+				<span class=" glyphicon glyphicon-ok"></span>
+				<a href="#" class="tracker-btn" id="done-toggle">Done</a>
 			</li>
 			<li class="list-group-item">
-				<a href="#" class="tracker-btn" id="current">Current</a>
+				<span class="glyphicon glyphicon-list"></span>
+				<a href="#" class="tracker-btn" id="current-toggle">Current</a>
 			</li>	
 			<li class="list-group-item">
-				<a href="#" class="tracker-btn" id="backlog">Backlog</a>
+				<span class="glyphicon glyphicon-list"></span>
+				<a href="#" class="tracker-btn" id="backlog-toggle">Backlog</a>
 			</li>
 			<li class="list-group-item">
-				<a href="#" class="tracker-btn" id="icebox">Icebox</a>
+				<span class="glyphicon glyphicon-star"></span>
+				<a href="#" class="tracker-btn" id="icebox-toggle">Icebox</a>
 			</li>	
 		</ul>
 	</div>
