@@ -16,7 +16,7 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 		defaultTrackers = ["done", "current", "backlog", "icebox"];
 		for (var i = 0; i < defaultTrackers.length; i++) {
 			trackers.create({ project_id: this.model.id, title: defaultTrackers[i],
-												visible: true}, { wait: true });
+												visible: true, ord: i}, { wait: true });
 		};
 	 },
 
@@ -40,4 +40,3 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 	},
 });
 
-// _.extend(TaskTracker.Views.ProjectShow.prototype, Backbone.OrdView);

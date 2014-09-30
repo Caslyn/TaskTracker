@@ -6,6 +6,11 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		"click .add-story-sidebar": "delegateStoryForm",
 	},
 
+	orderOptions: {
+		modelElement: '.tracker-box >',
+		modelName: 'tracker'
+	},
+
 	initialize: function() {
 		this.collection = this.model.trackers();
 		this.projectId = "project#" + this.model.id;
@@ -34,6 +39,7 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 		trackerModel.set({ visible: !(trackerModel.attributes.visible) });
 		trackerModel.save();
+		this.saveOrds();
 	},
 
 	addTracker: function(tracker) {
@@ -48,6 +54,5 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 			return subview.model.attributes.title === "icebox"
 		});
 		iceboxView.renderStoryForm(event);
-
 	}
 });

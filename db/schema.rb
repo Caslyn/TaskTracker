@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927010149) do
+ActiveRecord::Schema.define(version: 20140929230957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140927010149) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "visible",    default: true
+    t.float    "ord"
   end
 
   add_index "trackers", ["project_id"], name: "index_trackers_on_project_id", using: :btree

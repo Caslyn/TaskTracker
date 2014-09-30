@@ -22,3 +22,22 @@ button.add-story {
 	text-align: center;
 	border-color: white;
 }
+
+.close-story-btn {
+	display: inline-block;
+}
+
+.story-form {
+	margin: 2px;
+
+background: rgb(251,234,203); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(251,234,203,1) 17%, rgba(252,237,220,1) 51%, rgba(251,234,203,1) 89%, rgba(251,234,203,1) 89%, rgba(251,234,203,1) 97%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(17%,rgba(251,234,203,1)), color-stop(51%,rgba(252,237,220,1)), color-stop(89%,rgba(251,234,203,1)), color-stop(89%,rgba(251,234,203,1)), color-stop(97%,rgba(251,234,203,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(251,234,203,1) 17%,rgba(252,237,220,1) 51%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 89%,rgba(251,234,203,1) 97%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbeacb', endColorstr='#fbeacb',GradientType=0 ); /* IE6-9 */
+
+
+}

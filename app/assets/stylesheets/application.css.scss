@@ -25,15 +25,10 @@ html {
 	font-family: 'Open Sans', helvetica, arial, sans-serif;
 }
 
-.hidden {
-	display: none;
-}
-
 body {
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
-	overflow: hidden;
 
 	background: rgb(20,124,228); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(20,124,228,1) 0%, rgba(20,124,228,1) 100%); /* FF3.6+ */
@@ -72,6 +67,7 @@ body {
 #main, #welcomepage {
 	min-height: 800px;
 	height: 100%;
+	overflow: scroll;
 }
 
 body.signed-in {

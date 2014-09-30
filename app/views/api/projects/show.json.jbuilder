@@ -7,7 +7,7 @@ json.members @project.members do |member|
 end
 
 json.trackers @project.trackers do |tracker|
-	json.extract! tracker, :id, :title, :visible, :project_id, :created_at, :updated_at
+	json.extract! tracker, :id, :title, :visible, :ord, :project_id, :created_at, :updated_at
 
 	json.stories tracker.stories do |story|
 		json.extract! story, :id, :title, :description, :tracker_id, :ord, :created_at, :updated_at
