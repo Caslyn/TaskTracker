@@ -30,7 +30,7 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	toggleTracker: function(event) {
 		event.preventDefault();
 		var $currentTarget = $(event.currentTarget);
-		var trackerName = $currentTarget.attr('id');
+		var trackerName = $currentTarget.attr('id').slice(2);
 		var trackerView = $('.tracker-box').find('#' + trackerName);
 
 		trackerModel = _.find(this.collection.models, function(tmodel) {

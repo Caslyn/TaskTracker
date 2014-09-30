@@ -17,7 +17,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		this.collection = this.model.stories();
 		this.listenTo(this.model, 'change', this.render);
 		this.listenTo(this.collection, 'add', this.addStory);
-		this.formShowing = false;
+		this.listenTo(this.collection, 'remove', this.render);
 	},
 
 	data: function(){

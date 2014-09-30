@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929230957) do
+ActiveRecord::Schema.define(version: 20140930194201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20140929230957) do
     t.float    "ord"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "points"
+    t.string   "type"
+    t.string   "tasks"
   end
 
   add_index "stories", ["tracker_id"], name: "index_stories_on_tracker_id", using: :btree
