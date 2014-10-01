@@ -8,9 +8,8 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 
 	events: {
 		"click .add-story" : "renderStoryForm",
-		"sortremove": "removeStory",
 		"sortreceive": "receiveStory",
-		"sortstop" : "saveStories",
+		"sortstop" : "saveOrds",
 	},
 
 	initialize: function() {
@@ -70,6 +69,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 
 	renderStories: function() {
 		this.model.stories().each(this.addStory.bind(this));
+		this.onRender();
 	},
 
 	addStory: function(story) {
@@ -110,11 +110,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		this.subviews('.story-wrapper').push(newStoryView);
 		//then remove the ghost
 		ghost.remove();
-		//then update the ords using saveStories
-		this.saveStories();
-	},
-
-	saveStories: function(event) {
-		this.saveOrds(event);
+		//then update the ords
+		this.saveOrds();
 	},
 });
