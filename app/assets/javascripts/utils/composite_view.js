@@ -67,10 +67,11 @@ Backbone.CompositeView = Backbone.View.extend({
 		var collection = this.collection;
 		// Iterate over & compare index w/ ord attribute
 		itemElements.each(function (index, element) {
+			// Account for Modal Included in ItemElements
+			debugger;
 			var itemId = $(element).data(idAttr);
 			var item = collection.get(itemId);
 			var ord = item.get('ord');
-
 			if (ord === index) {
 				return;
 			// project_id attr indicates item is a Tracker

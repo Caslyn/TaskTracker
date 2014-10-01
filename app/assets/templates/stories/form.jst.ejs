@@ -1,39 +1,36 @@
-<% if (model.attributes) { %>
-	<% title = model.attributes.title %>
-	<% description = model.attributes.description %>
-	<% action = "Save" %>
-<% } %>
+<div class="form">
+	<h4 class="form-header"><%= header %></h4>
+	<span class="glyphicon glyphicon-trash delete-story"></span>
+	<form>
+		<div class="form-group">
+			<input type="text" id="title-input" class="form-control"
+						  placeholder="title", value="<%= title %>">
+			<textarea id="description-input" class="form-control" 
+							placeholder="description"><%= description %></textarea>
+		</div>
+		<div class="form-group">
+			<label for="type-picker">Type</label>
+			<select class="story-type form-control" id="type-picker">
+				<option>Feature </option>
+				<option>Bug </option>
+				<option>Chore </option>
+				<option>Release </option>
+			</select>
+		</div>
 
-<span class="glyphicon glyphicon-trash delete-story"></span>
-<form class="form">
-	<div class="form-group">
-		<input type="text" id="title-input" class="form-control"
-					  placeholder="title", value="<%= title %>">
-		<textarea id="description-input" class="form-control" 
-						placeholder="description"><%= description %></textarea>
-	</div>
-	<div class="form-group">
-		<label for="type-picker">Type</label>
-		<select class="story-type form-control" id="type-picker">
-			<option>Feature </option>
-			<option>Bug </option>
-			<option>Chore </option>
-			<option>Release </option>
-		</select>
-	</div>
-
-	<div class="form-group">
-		<label for="point-picker">Points</label>
-		<select class="story-points form-control" id="point-picker">
-			<option value="null">Unestimated</option>
-			<option value="0">0 Points</option>
-			<option value="1">1 Point</option>
-			<option value="2">2 Points</option>
-			<option value="3">3 Points</option>
-		</select>
-	</div>
-	<div class="btn-options">
-		<button type="button" class="btn btn-default create btn-xs"><%= action %></button>
-		<button type="button" class="btn btn-default close-form btn-xs">Cancel</button>
-	</div>
-</form>
+		<div class="form-group">
+			<label for="point-picker">Points</label>
+			<select class="story-points form-control" id="point-picker">
+				<option value="null">Unestimated</option>
+				<option value="0">0 Points</option>
+				<option value="1">1 Point</option>
+				<option value="2">2 Points</option>
+				<option value="3">3 Points</option>
+			</select>
+		</div>
+		<div class="btn-options">
+			<button type="button" class="btn btn-default create btn-xs"><%= action %></button>
+			<button type="button" class="btn btn-default close-form btn-xs">Cancel</button>
+		</div>
+	</form>
+</div>

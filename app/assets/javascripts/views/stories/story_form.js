@@ -8,10 +8,30 @@ TaskTracker.Views.StoryForm = Backbone.LinkFormView.extend({
 	},
 
 	render: function() {
-		var renderedContent = this.formTemplate({ model: this.model });
+		var header = this.modelCheck(this.model)["header"];
+		var action = this.modelCheck(this.model)["action"];
+		var title = this.modelCheck(this.model)["title"];
+		var description = this.modelCheck(this.model)["description"];
+		var renderedContent = this.formTemplate({ 
+			model: this.model,
+			title: title, 
+			description: description,
+			header: header,
+			action: action,
+		});
 		this.$el.html(renderedContent);
 		this.delegateEvents();
 		return this;
+	},
+
+	modelCheck: function(model) {
+		if (model.isNew()) {
+			return { header: "Create Story", action: "Save" };
+		} else {
+			return { header: "Edit Story", action: "Update", 
+							 description: model.attributes.description,
+							 title: model.attributes.title };
+		}
 	},
 
 	submit: function(event) {
