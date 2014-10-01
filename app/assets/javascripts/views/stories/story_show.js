@@ -1,5 +1,11 @@
-TaskTracker.Views.StoryShow = Backbone.View.extend({
+TaskTracker.Views.StoryShow = Backbone.CompositeView.extend({
 	template: JST['stories/show'],
+	attributes: function(){
+		return {
+			'data-tracker-id': this.model.get('tracker_id'),
+			'data-story-id': this.model.id
+		};
+	},
 
 	events: {
 		"click .edit-story": "toggleEdit",
@@ -14,10 +20,6 @@ TaskTracker.Views.StoryShow = Backbone.View.extend({
 		this.$el.append(storyView.render().$el);
 		this.$('.story-title').hide();
 		this.$(storyView.$el).on('remove', this.render.bind(this));
-	},
-
-	attributes: function() {
-		return { 'data-story-id': this.model.id }
 	},
 
 	render: function() {

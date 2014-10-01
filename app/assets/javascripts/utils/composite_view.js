@@ -68,7 +68,6 @@ Backbone.CompositeView = Backbone.View.extend({
 		// Iterate over & compare index w/ ord attribute
 		itemElements.each(function (index, element) {
 			// Account for Modal Included in ItemElements
-			debugger;
 			var itemId = $(element).data(idAttr);
 			var item = collection.get(itemId);
 			var ord = item.get('ord');

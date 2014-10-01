@@ -1,13 +1,9 @@
-<li class='story-title'
-		data-tracker-id="<%= story.escape('tracker_id') %>"
-		data-story-id="<%= story.escape('id') %>">
+<div class='story-title'>
 		<span class="glyphicon glyphicon-cog edit-story"></span>
 		<span class="glyphicon glyphicon-th-large show-modal"></span>
 
 		<h4 class="title"><%= story.escape('title') %></h4>
-</li>
-
-<!-- Show Modal -->
+</div>
 
 <div class="story-modal modal modal-fade">
 	<div class="modal-dialog">
@@ -18,8 +14,14 @@
 			</div>
 			<div class="modal-body">
 				<ul class="list-group">
-					<li class="list-group-item"><%= story.escape('points') %></li>
-					<li class="list-group-item"><%= story.escape('story_type') %></li>
+					<li class="list-group-item">
+						<p>Points</p>
+						<p><%= story.escape('points') %></p>
+					</li>
+					<li class="list-group-item">
+						<p>Type</p>
+						<p><%= story.escape('story_type') %></p>
+					</li>
 				</ul>
 			</div>
 		</div>

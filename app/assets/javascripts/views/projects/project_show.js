@@ -15,6 +15,7 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.collection = this.model.trackers();
 		this.projectId = "project#" + this.model.id;
 		this.listenTo(this.model, 'sync', this.render);
+
 		this.collection.each(this.addTracker.bind(this));
 		this.listenTo(this.collection, 'add', this.addTracker);
 		this.listenTo(this.collection, 'remove', this.removeTracker);
@@ -39,7 +40,6 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 		trackerModel.set({ visible: !(trackerModel.attributes.visible) });
 		trackerModel.save();
-		this.saveOrds();
 	},
 
 	addTracker: function(tracker) {

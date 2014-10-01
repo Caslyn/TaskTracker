@@ -16,8 +16,10 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	initialize: function() {
 		this.collection = this.model.stories();
 		this.listenTo(this.model, 'change', this.render);
-		this.listenTo(this.collection, 'add', this.addStory);
+		// in addition to remove from collection, remove from subview
 		this.listenTo(this.collection, 'remove', this.render);
+		this.listenTo(this.collection, 'add', this.addStory);
+
 	},
 
 	data: function(){
@@ -36,6 +38,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		renderedContent = this.parseView(renderedContent);
 		this.$el.html(renderedContent);
 		this.delegateEvents();
+		// should not keep adding views - just reattach subviews you already have
 		this.renderStories();
 		return this;
 	},
@@ -64,6 +67,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	removeForm: function(form) {
 		this.removeSubview('.story-form', form);
 	},
+
 	renderStories: function() {
 		this.model.stories().each(this.addStory.bind(this));
 	},
@@ -78,23 +82,36 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	receiveStory: function(event, ui) {
 		var $storyDisplay = ui.item;
 		var storyId = $storyDisplay.data('story-id');
-		var newOrd = $storyDisplay.index();
-		var storyClone = new TaskTracker.Models.Story({
-			id: storyId,
-			tracker_id: this.model.id,
-			ord: newOrd
-		});
-		storyClone.save();
-		this.collection.add(storyClone, { silent: true });
-		this.saveStories(event);
+		var oldTrackerId = $storyDisplay.data('tracker-id');
+		var oldStories = this.model.collection.get(oldTrackerId).stories();
+		var story = oldStories.get(storyId);
+		oldStories.remove(story);
+		story.set('tracker_id', this.model.id);
+
+		var successCallback = function(){
+			this.surgicallyInsertStory(story, $storyDisplay)
+		}
+		story.save({},{
+			success: successCallback.bind(this)
+		})
 	},
 
-	removeStory: function(event, ui) {
-		var $story = ui.item;
-		var storyId = $story.data('story-id');
-		var stories = this.collection;
-		var storyToRemove = stories.get(storyId);
-		stories.remove(storyToRemove);
+	surgicallyInsertStory: function(story, ghost){
+		//we use silent because we don't want the view's automatic
+		//addStory method to be called
+		this.collection.add(story, { silent: true });
+		//create a new view for the story we are adding
+		var newStoryView = new TaskTracker.Views.StoryShow({
+			model: story
+		}).render();
+		//insert this new view's $el after the ghost
+		newStoryView.$el.insertAfter(ghost);
+		//and add this view to the array of subviews
+		this.subviews('.story-wrapper').push(newStoryView);
+		//then remove the ghost
+		ghost.remove();
+		//then update the ords using saveStories
+		this.saveStories();
 	},
 
 	saveStories: function(event) {
