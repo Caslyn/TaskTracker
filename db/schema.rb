@@ -42,9 +42,8 @@ ActiveRecord::Schema.define(version: 20140930194201) do
     t.float    "ord"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "points"
-    t.string   "type"
-    t.string   "tasks"
+    t.integer  "points"
+    t.string   "story_type"
   end
 
   add_index "stories", ["tracker_id"], name: "index_stories_on_tracker_id", using: :btree

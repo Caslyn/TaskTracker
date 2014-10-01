@@ -30,12 +30,15 @@
 
 
 .add-story {
- color: #FFFAE7;
+ color: white;
  float: right;
-}
+ padding: 2px;
+ border: 1px black solid;
 
-.add-story:hover {
-	color: #6096BD;
+ &:hover {
+ 	color: #6096BD;
+ 	border-width: 2px;
+ }
 }
 
 .tracker-title {

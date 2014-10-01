@@ -6,7 +6,6 @@ window.TaskTracker = {
   initialize: function() {
   	new TaskTracker.Routers.Router({ $rootEl: $('div#main') });
   	Backbone.history.start();
-  	// Create Default Trackers
   }
 };
 

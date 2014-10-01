@@ -26,7 +26,7 @@ module Api
 
 		def show
 			@story = Story.find(params[:id])
-			render :show
+			render json: @story
 		end
 
 		def destroy
@@ -53,7 +53,8 @@ module Api
 		end
 
 		def story_params
-			params.require(:story).permit(:title, :description, :tracker_id, :ord)
+			params.require(:story).permit(:title, :description, :tracker_id,
+			:ord, :points, :story_type)
 		end
 	end
 end

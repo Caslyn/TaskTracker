@@ -30,8 +30,11 @@ t6.save()
 t7.save()
 t8.save()
 
-s1 = t1.stories.new(title: 'all i do is win', description: 'no matter what!', tracker_id: t1.id, ord: 0)
-s2 = t1.stories.new(title: 'oh hey', description: 'hi!', tracker_id: t1.id, ord: 1)
+s1 = t1.stories.new(title: 'homie', description: 'sup', tracker_id: t1.id, ord: 0,
+										points: 1, story_type: "feature")
+
+s2 = t1.stories.new(title: 'oh hey', description: 'hi!', tracker_id: t1.id, ord: 1,
+										points: 2, story_type: "bug")
 
 s1.save()
 s2.save()
