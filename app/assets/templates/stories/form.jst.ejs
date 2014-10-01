@@ -4,9 +4,6 @@
 	<% action = "Save" %>
 <% } %>
 
-<div class="close-story-btn">
-	<button class="close btn btn-default">Close</button>
-</div>
 <span class="glyphicon glyphicon-trash delete-story"></span>
 <form class="form">
 	<div class="form-group">
@@ -35,5 +32,8 @@
 			<option value="3">3 Points</option>
 		</select>
 	</div>
-	<button class="btn btn-success create"><%= action %></button>
+	<div class="btn-options">
+		<button type="button" class="btn btn-default create btn-xs"><%= action %></button>
+		<button type="button" class="btn btn-default close-form btn-xs">Cancel</button>
+	</div>
 </form>

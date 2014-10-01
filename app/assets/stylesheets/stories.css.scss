@@ -27,10 +27,6 @@ button.add-story {
 	text-decoration: none;
 }
 
-.close-story-btn {
-	display: inline-block;
-}
-
 .story-form {
 	margin: 2px;
 
@@ -60,5 +56,15 @@ span.edit-story {
 
 	&:hover {
 		color: black;
+	}
+}
+
+.btn-options {
+	padding-left: 125px;
+
+	button:hover {
+		background-color: #2E9DF7;
+		border-bottom-color: #1F6AA7;
+		border-left-color: #1F6AA7;
 	}
 }

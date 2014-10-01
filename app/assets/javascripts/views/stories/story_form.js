@@ -2,7 +2,7 @@ TaskTracker.Views.StoryForm = Backbone.LinkFormView.extend({
 	formTemplate: JST['stories/form'],
 
 	events: {
-		"click .close": "remove",
+		"click .close-form": "remove",
 		"click .delete-story": "destroyStory",
 		"click .create": "submit",
 	},
@@ -38,7 +38,6 @@ TaskTracker.Views.StoryForm = Backbone.LinkFormView.extend({
 				story_type: type,
 			}, { wait: true })
 		}
-
 		this.remove();
 	},
 
