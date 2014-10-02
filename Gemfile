@@ -47,7 +47,10 @@ gem 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+	gem 'lol_dba'
+
 group :development do
+
 	gem 'annotate'
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'

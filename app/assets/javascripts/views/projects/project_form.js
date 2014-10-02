@@ -1,8 +1,8 @@
-TaskTracker.Views.ProjectForm = Backbone.View.extend({
+TaskTracker.Views.ProjectForm= Backbone.View.extend({
 	template: JST['projects/form'],
 
 	events: {
-		"click button": "submit"
+		"click button": "submit",
 	},
 
 	render: function() {
@@ -21,7 +21,7 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 	 },
 
 	submit: function(event) {
-		event.preventDefault();
+
 		var title = this.$('#title-input').val();
 		var description = this.$('#description-input').val();
 		var params = {
@@ -32,9 +32,8 @@ TaskTracker.Views.ProjectForm = Backbone.View.extend({
 		function success() {
 			var collection = this.model.trackers()
 			this.seedTrackers.apply(this, [collection]);
-			Backbone.history.navigate("", { trigger: true });
+			$('.project-modal').modal('hide');
 		};
-
 		this.model.set(params);
 		this.collection.create(this.model, {success: success.bind(this) });
 	},

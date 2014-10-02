@@ -1,21 +1,46 @@
 <div id="welcomepage">
 
 		<div class="shuffle">
-			<ul class="list-group ">
-				<li class="word list-group-item">
-					<h2 id="word1"> BUILD </h2>
-				</li>
-				<li class="word list-group-item">
-					<h2 id="word2">BETTER</h2>
-				</li>
-				<li class="word list-group-item">
-					<h2 id="word3">FASTER</h2>
-				</li>
-				<li class="list-group-item"><h2>SOFTWARE</h2></li>
-			</ul>
-		</div>
+				<div id="word-build"><h1 id="word"> BUILD </h1></div>
+					<div id="better-faster-wrapper">
+					<div id="word-wrapper2"><h1 id="word2">BETTER</h1></div>
+					<div id="word-wrapper3"><h1 id="word3">FASTER</h1></div>
+				</div>
+				<div id="word-wrapper4"><h1 id="word4">SOFTWARE</h1></div>
 
+		</div>
+			<!-- <div class="photo">
+				<div class="photo-background">
+					<%= image_tag ("project-show.png") %>
+				</div>
+		</div> -->
 </div>
 
+<script type="text/javascript">
 
+	// slide up "software"
+	setTimeout(function(){
+		$('#word-wrapper4').addClass('magictime slideUpWord4');
+	}, 2000);
+	// slide down "faster & "better" to make room
+	setTimeout(function() {
+		$('#better-faster-wrapper').addClass('magictime slideDownWord23');
+	},2500);
+
+	// slide up "faster" (switch places with "better")
+	setTimeout(function() {
+		$('#word-wrapper3').addClass('magictime slideUpWord3');
+	},4500);
+
+	// slide down "better" (switch places with "faster")
+	setTimeout(function() {
+		$('#word-wrapper2').addClass('magictime slideDownWord2');
+	},4990);
+
+	// setTimeout(function() {
+	// 	$('#better-faster-wrapper').addClass('magictime slideUpWord23')
+	// }, 5000)
+
+
+</script>
 

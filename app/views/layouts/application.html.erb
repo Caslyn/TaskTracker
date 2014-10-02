@@ -3,7 +3,7 @@
 	<head>
 	  <title>TaskTracker</title>
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= stylesheet_link_tag "magic.css", media: "all" %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body <%= "class=signed-in" if signed_in? %>>
@@ -26,5 +26,6 @@
 			</div>
 		</div>
 
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	</body>
 </html>
