@@ -66,12 +66,30 @@ body {
 
 }
 
-
 #main, #welcomepage {
 	min-height: 452px;
 	height: 100%;
 	overflow: scroll;
-	margin-left: 80px;
+	position: relative;
+
+	.carousel {
+
+		position: absolute;
+		right: 75px;
+		display: inline-block;
+		margin-top: 25px;
+		height: 360px;
+		width: 700px;
+
+		.item {
+			width: 100%;
+		}
+
+		.carousel-control {
+			width: 50px;
+		}
+
+	 }
 }
 
 /* Dashboard Background */
@@ -86,8 +104,8 @@ body.signed-in {
 	background: linear-gradient(to bottom,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
 
-	.navbar-brand {
-		color: white;
+	.navbar {
+		background-color: #6096bd 
 	}
 
 	nav {
@@ -106,6 +124,19 @@ body.signed-in {
 
 ul.navbar-signin {
 	width: 100%;
+
+	div.auth-options{
+		float: right;
+		margin-top: 25px;;
+		margin-right: 70px;
+		
+		button{
+			margin-right: 10px;
+			font-size: 16px;
+			a { text-decoration: none }
+
+		}
+	}
 	
 	li {
 		top: 14px;
@@ -138,9 +169,7 @@ ul.navbar-signin {
 	margin-right: 25px;
 }
 
-.signed-in .navbar {
-	background-color: #6096bd 
-}
+
 
 .shuffle {
 	margin-top: 100px;
@@ -164,7 +193,8 @@ ul.navbar-signin {
 
 .shuffle-words {
 	position:absolute;
-	left:0;
+	left:75px;
+	margin-top: 25px;
 	transition: top 1.5s ease-out;
 }
 .shuffle-words.word1 {
@@ -193,20 +223,6 @@ ul.navbar-signin {
 .shuffle-words.slide4 {
 	top: 243px !important;
 }
-
-// div.photo {
-// 	margin-top: 100px;
-// 	padding-right: 60px;
-// 	float: right;
-// 	display: inline-block;
-// }
-
-// div.photo-background {
-// 	float: right;
-// 	padding: 30px;
-// 	border: 1px solid black;
-// 	background-color: yellow;
-// }
 
 
 

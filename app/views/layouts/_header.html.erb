@@ -4,7 +4,7 @@
 	    <% unless signed_in? %>
 		  	<a class="navbar-brand brand-centered" href="/"><%= image_tag ("logo.png") %></a>
 		  <% else %>
-		    <a class="navbar-brand" href="/">Task Tracker</a>
+		    <a class="navbar-brand" href="/"><%= image_tag ("signedin_logo.png") %></a>
 	    <% end %>
 	  </div>
 	  <!-- nav bar options -->
@@ -27,12 +27,12 @@
 			      <%= yield :auth_button %>
 			    </div>
 			 <% else %>
-			 	<div class="auth-options" style="float:right; margin-top:25px; margin-right: 20px" >
+			 	<div class="auth-options" >
 				 <!-- sign in option -->
-				   <button type="button" class="btn btn-default btn-md" id="signin-link"><%= link_to "Sign In", new_session_url, :remote => true,
+				   <button type="button" class="btn btn-default btn-lrg" id="signin-link"><%= link_to "Sign In", new_session_url, :remote => true,
 				   				'data-toggle' => 'modal', 'data-target' => '#signInModal'   %></button>
 				  <!-- sign up option -->
-				 <button type="button" class="btn btn-default btn-md" id="signup-link"><%= link_to "Sign Up", new_user_url, :remote => true, 'data-toggle' => 'modal', 'data-target' => '#signUpModal' %></button>
+				 <button type="button" class="btn btn-default btn-lrg" id="signup-link"><%= link_to "Sign Up", new_user_url, :remote => true, 'data-toggle' => 'modal', 'data-target' => '#signUpModal' %></button>
 				</div>
       <% end %>
     </ul>
