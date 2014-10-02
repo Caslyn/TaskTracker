@@ -1,45 +1,101 @@
 <div id="welcomepage">
 
 		<div class="shuffle">
-				<div id="word-build"><h1 id="word"> BUILD </h1></div>
-					<div id="better-faster-wrapper">
-					<div id="word-wrapper2"><h1 id="word2">BETTER</h1></div>
-					<div id="word-wrapper3"><h1 id="word3">FASTER</h1></div>
-				</div>
-				<div id="word-wrapper4"><h1 id="word4">SOFTWARE</h1></div>
+			<div class="shuffle-words word1">
+				<h1>BUILD</h1></div>
+			<div class="shuffle-words word2">
+				<h1>SOFTWARE</h1></div>
+			<div class="shuffle-words word3">
+				<h1>FASTER</h1></div>
+			<div class="shuffle-words word4">
+				<h1>BETTER</h1></div>
+		</div>
 
 		</div>
-			<!-- <div class="photo">
-				<div class="photo-background">
-					<%= image_tag ("project-show.png") %>
-				</div>
-		</div> -->
-</div>
 
+<!-- Carousel -->
+	<div id="carousel-frontpage" class="carousel slide" data-ride="carousel">
+	<!--   Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-frontpage" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-frontpage" data-slide-to="1"></li>
+	    <li data-target="#carousel-frontpage" data-slide-to="2"></li>
+	  </ol>
+
+<!-- 	  Wrapper for slides -->
+		<div class="carousel-inner">
+	    <div class="item active">
+	      <%= image_tag ("project-show.png") %>
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>
+	    <div class="item"> 
+	      <img src="..." alt="...">
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>
+	    ...
+	  </div>
+
+	 <!--  Controls -->
+	  <a class="left carousel-control" href="#carousel-frontpage" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-frontpage" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+ 	</div>
+</div>
+ 
 <script type="text/javascript">
 
-	// slide up "software"
-	setTimeout(function(){
-		$('#word-wrapper4').addClass('magictime slideUpWord4');
-	}, 2000);
-	// slide down "faster & "better" to make room
-	setTimeout(function() {
-		$('#better-faster-wrapper').addClass('magictime slideDownWord23');
-	},2500);
+	document.addEventListener('DOMContentLoaded', function() {
+		var $build = $('.word1');
+		var $software = $('.word2');
+		var $faster = $('.word3');
+		var $better = $('.word4');
 
-	// slide up "faster" (switch places with "better")
-	setTimeout(function() {
-		$('#word-wrapper3').addClass('magictime slideUpWord3');
-	},4500);
+		var shuffleWords = function() {
+		// slide up "better"
+			setTimeout(function(){
+				$better.addClass('slide2');
+			}, 2000);
+			// slide down "software & "better" to make room
+			setTimeout(function() {
+				$software.addClass('slide3');
+				$faster.addClass('slide4');
+			},2800);
 
-	// slide down "better" (switch places with "faster")
-	setTimeout(function() {
-		$('#word-wrapper2').addClass('magictime slideDownWord2');
-	},4990);
+			// slide up "faster" (switch places with "software")
+			setTimeout(function() {
+				$faster.addClass('slide2');
+				$faster.removeClass('slide4');
+			},8000);
 
-	// setTimeout(function() {
-	// 	$('#better-faster-wrapper').addClass('magictime slideUpWord23')
-	// }, 5000)
+			// slide down "software" (switch places with "faster")
+			setTimeout(function() {
+				$software.addClass('slide4');
+				$software.removeClass('slide3');
+			},8100);
+
+			// slide down "better"
+			setTimeout(function() {
+				$better.addClass('slide3');
+				$better.removeClass('slide2');
+			}, 8900)
+
+			setTimeout(function() {
+				$('.shuffle-words')
+							.removeClass('slide1 slide2 slide3 slide4')
+				shuffleWords();
+			}, 15000);
+	}
+
+	shuffleWords();
+});
+	
 
 
 </script>

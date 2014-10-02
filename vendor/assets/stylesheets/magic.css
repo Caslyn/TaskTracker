@@ -284,6 +284,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -o-animation-name: slideDownWord23;
   animation-name: slideDownWord23;
 }
+
+
+.slideDownWord4 {
+  -webkit-animation-name: slideDownWord4;
+  -moz-animation-name: slideDownWord4;
+  -ms-animation-name: slideDownWord4;
+  -o-animation-name: slideDownWord4;
+  animation-name: slideDownWord4;
+}
 .slideLeft {
   -webkit-animation-name: slideLeft;
   -moz-animation-name: slideLeft;
@@ -2320,6 +2329,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
+@-moz-keyframes slideDownWord4 {
+  0% {
+    -moz-transform-origin: 0 0;
+    -moz-transform: translateY(0%);
+  }
+
+  100% {
+    -moz-transform-origin: 0 0;
+    -moz-transform: translateY(0%);
+  }
+}
+
 @-moz-keyframes slideDownWord23 {
   0% {
     -moz-transform-origin: 0 0;
@@ -2340,6 +2361,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   100% {
     -webkit-transform-origin: 0 0;
     -webkit-transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes slideDownWord4 {
+  0% {
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: translateY(0%);
+  }
+
+  100% {
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: translateY(0%);
   }
 }
 @-webkit-keyframes slideDownWord23 {
@@ -2366,6 +2399,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
+@-o-keyframes slideDownWord4 {
+  0% {
+    -o-transform-origin: 0 0;
+    -o-transform: translateY(0%);
+  }
+
+  100% {
+    -o-transform-origin: 0 0;
+    -o-transform: translateY(0%);
+  }
+}
+
 @-o-keyframes slideDownWord23 {
   0% {
     -o-transform-origin: 0 0;
@@ -2389,6 +2434,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
+@-ms-keyframes slideDownWord4 {
+  0% {
+    -ms-transform-origin: 0 0;
+    -ms-transform: translateY(0%);
+  }
+
+  100% {
+    -ms-transform-origin: 0 0;
+    -ms-transform: translateY(0%);
+  }
+}
+
+
 @-ms-keyframes slideDownWord23 {
   0% {
     -ms-transform-origin: 0 0;
@@ -2409,6 +2467,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   100% {
     transform-origin: 0 0;
     transform: translateY(100%);
+  }
+}
+
+@keyframes slideDownWord4 {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
   }
 }
 
