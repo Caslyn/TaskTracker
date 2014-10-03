@@ -6,6 +6,10 @@ TaskTracker.Collections.Trackers = Backbone.Collection.extend({
 		this.project = options.project
 	},
 
+	comparator: function() {
+		return this.get('ord');
+	},
+
 	getOrFetch: function(id) {
 		var tracker = this.get(id);
 		var trackers = this;

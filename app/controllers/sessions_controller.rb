@@ -7,8 +7,12 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		@user = User.find_by_credentials(params[:user][:email],
+		if params[:user][:guest]
+			@user = User.find_by_credentials("guest@mail.com", "password")
+		else
+			@user = User.find_by_credentials(params[:user][:email],
 																		 params[:user][:password])
+		end
 		if @user 
 			sign_in_user!(@user)
 			redirect_to root_url

@@ -15,7 +15,6 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	initialize: function() {
 		this.collection = this.model.stories();
 		this.listenTo(this.model, 'change', this.render);
-		// in addition to remove from collection, remove from subview
 		this.listenTo(this.collection, 'remove', this.render);
 		this.listenTo(this.collection, 'add', this.addStory);
 

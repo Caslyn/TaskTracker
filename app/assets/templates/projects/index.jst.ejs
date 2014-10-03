@@ -1,15 +1,17 @@
-<div class="panel panel-default">
+<div class="project-index-background panel panel-default">
 	<div class="panel-heading">
 		<h3>Projects</h3>
+		<div class="add-project-link">
+			<span class="glyphicon glyphicon-plus"></span>
+			<a href="#/projects/new" class="create-project">Create Project</a></div>
 	</div>
 	<table class="table">
-		<tr>
-			<th><a href="#/projects/new" class="create-project">Create Project</a></th>
-		</tr>
 		<% projects.each(function(project) { %>
 			<tr>
 				<td>
-					<a href="#/projects/<%= project.id %>"><%= project.escape('title') %></a>
+					<div class="project-divider">
+					<a class="project-name-link" href="#/projects/<%= project.id %>"><%= project.escape('title') %></a>
+				</div>
 				</td>
 			</tr>
 		<% }) %>

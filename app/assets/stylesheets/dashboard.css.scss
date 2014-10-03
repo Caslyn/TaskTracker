@@ -1,5 +1,5 @@
-.projects-index {
-	top: 20px;
+.dashboard-background {
+	top: 70px;
 	margin: 45px 30px;
 	height: 100%;
 	width: 100%;
@@ -28,7 +28,6 @@
 	font-weight: bold;
 
 }
-
 button.destroy {
 	text-align: center;
 	float: right;
@@ -48,6 +47,10 @@ button.destroy {
 #all-projects {
 	margin: 15px;
 	color: #21608A;
+	text-decoration: none;
+	&:hover {
+		color: black;
+	}
 }
 
 #create-project {

@@ -28,5 +28,4 @@ class ApplicationController < ActionController::Base
   def redirect_home
     redirect_to root_url if signed_in?
   end
-
 end

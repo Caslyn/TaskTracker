@@ -30,7 +30,7 @@ TaskTracker.Views.ProjectForm= Backbone.View.extend({
 		}
 
 		function success() {
-			var collection = this.model.trackers()
+			var collection = this.model.trackers();
 			this.seedTrackers.apply(this, [collection]);
 			$('.project-modal').modal('hide');
 		};

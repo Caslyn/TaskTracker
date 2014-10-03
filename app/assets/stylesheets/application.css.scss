@@ -42,6 +42,7 @@ body {
 	margin-bottom: 0px;
 	height: 75px;
 	border-bottom: 0px;
+	border: 1px solid black;
 
 	a.navbar-brand {
 		font-size: 30px;
@@ -95,7 +96,7 @@ body {
  }
 
 /* Dashboard Background */
-body.signed-in {
+body.signed-in{
 
 	background: rgb(206,220,231); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6+ */

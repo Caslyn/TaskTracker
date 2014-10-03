@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 	before_action :redirect_home
-
 	def new
 		@user = User.new
 		render :new
@@ -8,7 +7,6 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-
 		if @user.save
 			sign_in_user!(@user)
 			redirect_to root_url
@@ -26,6 +24,6 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:email, :password, :name)
+		params.require(:user).permit(:email, :password, :name, :guest)
 	end
 end
