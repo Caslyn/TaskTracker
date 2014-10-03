@@ -10,10 +10,10 @@
 	  <!-- nav bar options -->
     <ul class="nav navbar-nav navbar-signin">
     	<% if signed_in? %>
-	    	<li class="sign-out-link" ><a href="/session" data-method="delete" style="color:white">Sign Out</a></li>
-    		<li class="dashboard-link"><a href="" style="color:white">Dashboard</a></li>
+	    	<li class="sign-out-link" ><a href="/session" class="header-link" data-method="delete">Sign Out</a></li>
+    		<li class="dashboard-link"><a class="header-link" href="">Dashboard</a></li>
     		<li class="dropdown">
-  			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white">Projects<span class="caret"></span></a>
+  			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
   			  <ul class="dropdown-menu" role="menu">
   			  	<li role="presentation"><a role="menuitem" href="#/projects" id="all-projects-link" >View All Projects</a></li>
 				  	<li role="presentation" class="divider"></li>

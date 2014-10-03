@@ -67,12 +67,14 @@ body {
 }
 
 #main, #welcomepage {
-	min-height: 452px;
+	min-height: 800px;
 	height: 100%;
 	overflow: scroll;
 	position: relative;
 
+
 	.carousel {
+		padding: 0 30px;
 
 		position: absolute;
 		right: 75px;
@@ -90,7 +92,7 @@ body {
 		}
 
 	 }
-}
+ }
 
 /* Dashboard Background */
 body.signed-in {
@@ -124,7 +126,6 @@ body.signed-in {
 
 ul.navbar-signin {
 	width: 100%;
-
 	div.auth-options{
 		float: right;
 		margin-top: 25px;;
@@ -139,8 +140,21 @@ ul.navbar-signin {
 	}
 	
 	li {
+		font-size: 16px;
 		top: 14px;
 		float: right;
+		
+		&:hover {
+			color: black;
+			font-weight: bold;
+		}
+
+		a.dropdown-toggle {
+			color: white;
+		}
+		a.header-link {
+			color: white;
+		}
 	}
 }
 
@@ -163,6 +177,11 @@ ul.navbar-signin {
 		color: white;
 	}
 
+}
+
+.sign-out-link{
+	margin-right: 70px;
+	
 }
 
 .navbar-btn {

@@ -1,25 +1,32 @@
+.projects-index {
+	top: 20px;
+	margin: 45px 30px;
+	height: 100%;
+	width: 100%;
+}
+
 .project-board{
 	float: left;
 	height: 138px;
 	width: 436px;
 	background: white;
-
+	margin: 10px;
 
 	-webkit-box-shadow: 2px 0px 12px 2px rgba(2,0,10,1);
 	-moz-box-shadow: 2px 0px 12px 2px rgba(2,0,10,1);
 	box-shadow: 2px 0px 12px 2px rgba(2,0,10,1);
 }
 
-.projects-index {
-	top: 30px;
-	left: 50px;
-	margin-top: 45px;
-}
-
 #dashboard-greeting {
-	margin-right: 3px;
+	margin-right: 5px;
 	display: inline;
-	color: black;
+	color: #E6B15B;
+	font-size: 54px;
+
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: #000636;
+	font-weight: bold;
+
 }
 
 button.destroy {
@@ -33,12 +40,13 @@ button.destroy {
 }
 
 .dashboard-header {
-	margin-bottom: 20px;
+	margin-bottom: 20px;	
+	margin-left: 40%;
 
 }
 
 #all-projects {
-	margin-left: 15px;
+	margin: 15px;
 	color: #21608A;
 }
 
