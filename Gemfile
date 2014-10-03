@@ -50,7 +50,7 @@ gem 'bcrypt'
 	gem 'lol_dba'
 
 group :development do
-
+	gem 'bullet'
 	gem 'annotate'
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'

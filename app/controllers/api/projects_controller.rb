@@ -16,7 +16,6 @@ module Api
 
 		def index
 			if current_user 
-				@projects = current_user.projects
 				render json: @projects
 			else
 				redirect_to new_session_url

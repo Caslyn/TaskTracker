@@ -16,6 +16,7 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.projectId = "project#" + this.model.id;
 		this.listenTo(this.model, 'sync', this.render);
 		this.collection.each(function() {
+			setTimeout(200);
 			this.addTracker.bind(this)
 		});
 		this.listenTo(this.collection, 'add', this.addTracker);
