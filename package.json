@@ -1,0 +1,26 @@
+{
+  "name": "TaskTracker",
+  "version": "0.0.0",
+  "description": "Task Tracking & Organization App ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jquery-ui": "~1.10.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Caslyn/TaskTracker.git"
+  },
+  "author": "Caslyn Cole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caslyn/TaskTracker/issues"
+  },
+  "homepage": "https://github.com/Caslyn/TaskTracker"
+}

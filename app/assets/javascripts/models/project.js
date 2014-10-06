@@ -1,6 +1,6 @@
 TaskTracker.Models.Project = Backbone.Model.extend({
 	urlRoot: '/api/projects',
-	
+
 	trackers: function() {
 		if (!this._trackers) {
 			this._trackers = new TaskTracker.Collections.Trackers([], { project : this })

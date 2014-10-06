@@ -34,6 +34,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'thin'
+
 group :doc do
   gem 'sdoc', require: false
 end
@@ -50,7 +52,6 @@ gem 'bcrypt'
 	gem 'lol_dba'
 
 group :development do
-	gem 'bullet'
 	gem 'annotate'
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'

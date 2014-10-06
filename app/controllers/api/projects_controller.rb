@@ -8,7 +8,7 @@ module Api
 			@project = current_user.projects.new(project_params)
 
 			if @project.save
-				render json: @project
+				render :show
 			else
 				render json: @project.errors.full_messages, status: :unprocessable_entity
 			end
@@ -16,7 +16,7 @@ module Api
 
 		def index
 			if current_user 
-				render json: @projects
+				render json: current_user.projects
 			else
 				redirect_to new_session_url
 			end

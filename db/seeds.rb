@@ -1,11 +1,9 @@
 # Users
-u1 = User.create(email: "caslyn@mail.com", name: "caslyn", password: "password")
-u1.save() 
-
-u2 = User.create(email: "guest@mail.com", name: "guest", password: "password")
+u1 = User.new(email: "caslyn@mail.com", name: "caslyn", password: "password")
+u1.save()
+u2 = User.new(email: "guest@mail.com", name: "guest", password: "password")
 u2.save()
-
-u3 = User.create(email: "demo@mail.com", name: "demo", password: "password")
+u3 = User.new(email: "demo@mail.com", name: "demo", password: "password")
 u3.save()
 
 # Projects

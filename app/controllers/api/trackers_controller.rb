@@ -17,15 +17,6 @@ module Api
 			render json: {}
 		end
 
-		def show
-			@tracker = Tracker.includes(:stories).find(params[:id])
-			if @project
-				render :show
-			else
-				render json: "Tracker is Unavailable"
-			end
-		end
-
 		def update
 			@tracker = current_project.trackers.find(params[:id])
 

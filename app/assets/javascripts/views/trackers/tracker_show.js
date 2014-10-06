@@ -12,16 +12,19 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		"sortstop" : "saveOrds",
 	},
 
-	initialize: function() {
+	initialize: function(options) {
+		this.project = options.project;
 		this.collection = this.model.stories();
+
 		this.listenTo(this.model, 'change', this.render);
 		this.listenTo(this.collection, 'remove', this.render);
 		this.listenTo(this.collection, 'add', this.addStory);
-
 	},
-
+ 
 	data: function(){
-		return {'tracker-id': this.model.id};
+		return {
+			'tracker-id': this.model.id, 
+		};
 	},
 
 	parseView: function(view) {
@@ -32,11 +35,14 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		}
 	},
 	render: function() {
-		var renderedContent = this.template({ tracker: this.model });
+		var displayWeek = this.displayWeek();
+		var renderedContent = this.template({ 
+			tracker: this.model, 
+			week: displayWeek
+		});
 		renderedContent = this.parseView(renderedContent);
 		this.$el.html(renderedContent);
 		this.delegateEvents();
-		// should not keep adding views - just reattach subviews you already have
 		this.renderStories();
 		return this;
 	},
@@ -47,18 +53,34 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		});
 	},
 
+	displayWeek: function() {
+		var startTime = this.project.get('created_at') || this.model.get('created_at');
+		var startDate = new Date(startTime)
+		var todayDate = new Date();
+		var day = todayDate.toString().slice(4, 11)
+
+		var oneDay = 24*60*60*1000;	// hours*minutes*seconds*milliseconds
+
+		var diffDays = Math.abs((todayDate.getTime() - startDate.getTime())/(oneDay));
+		var weekNum = Math.floor(diffDays / 7) + 1;
+
+		if (this.collection.length > 0) {
+			return "<p class='showWeek'>week " + weekNum + " | " + day + "</p>";
+		} else {
+			return;
+		}
+	},
+
 	renderStoryForm: function(event) {
 		event.preventDefault();
 		// do not render story form twice
 		if (this.$('.story-form').html() !== "") {
 			return;
 		}
-
 		var storyForm = new TaskTracker.Views.StoryForm({
 			model: new TaskTracker.Models.Story(),
 			collection: this.collection
 		});
-
 		this.$('.story-form').html(storyForm.render().$el);
 	},
 

@@ -10,15 +10,17 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		modelElement: '.tracker-box >',
 		modelName: 'tracker'
 	},
-
+	
 	initialize: function() {
-		this.collection = this.model.trackers();
-		this.projectId = "project#" + this.model.id;
 		this.listenTo(this.model, 'sync', this.render);
+
+		this.collection = this.model.trackers();
+
 		this.collection.each(function() {
-			setTimeout(200);
 			this.addTracker.bind(this)
 		});
+
+
 		this.listenTo(this.collection, 'add', this.addTracker);
 		this.listenTo(this.collection, 'remove', this.removeTracker);
 	},
@@ -34,8 +36,6 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	toggleTracker: function(event) {
 		event.preventDefault();
 		var $currentTarget = $(event.currentTarget);
-		// $(event.currentTarget).parent().toggleClass('selected');
-
 		var trackerName = $currentTarget.attr('id').slice(2);
 		var trackerView = $('.tracker-box').find('#' + trackerName);
 
@@ -48,7 +48,8 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 
 	addTracker: function(tracker) {
 		var trackerView = new TaskTracker.Views.TrackerShow({
-			model: tracker
+			model: tracker,
+			project: this.model
 		});
 		this.addSubview('.tracker-box', trackerView);
 	},

@@ -1,7 +1,6 @@
 TaskTracker.Routers.Router = Backbone.Router.extend({
   routes: {
     "" : "dashboard",
-    // "home" : "home",
     "projects": "projectIndex",
     "projects/new" : "projectCreate",
     "projects/:id": "projectShow"
@@ -11,11 +10,6 @@ TaskTracker.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl
   },
-    
-  // home: function() {
-  //   var homeView = new TaskTracker.Views.HomeView();
-  //   this._swapView(homeView);
-  // },
 
   dashboard: function() {
     TaskTracker.Collections.projects.fetch();

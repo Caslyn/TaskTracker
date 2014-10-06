@@ -35,6 +35,7 @@ TaskTracker.Views.ProjectForm= Backbone.View.extend({
 			$('.project-modal').modal('hide');
 		};
 		this.model.set(params);
+		debugger;
 		this.collection.create(this.model, {success: success.bind(this) });
 	},
 });

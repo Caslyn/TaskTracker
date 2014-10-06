@@ -1,5 +1,6 @@
 TaskTracker.Views.StoryShow = Backbone.CompositeView.extend({
 	template: JST['stories/show'],
+
 	attributes: function(){
 		return {
 			'data-tracker-id': this.model.get('tracker_id'),

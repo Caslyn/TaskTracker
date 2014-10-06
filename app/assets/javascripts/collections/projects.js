@@ -3,7 +3,7 @@ TaskTracker.Collections.Projects = Backbone.Collection.extend({
 	url: "/api/projects",
 
 	getOrFetch: function(id) {
-		var project = this.get('id');
+		var project = this.get(id);
 		var projects = this;
 		if (!project) {
 			var project = new TaskTracker.Models.Project({ id: id });
