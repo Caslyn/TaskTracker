@@ -10,8 +10,7 @@ json.trackers @project.trackers do |tracker|
 	json.extract! tracker, :id, :title, :visible, :ord, :project_id, :created_at, :updated_at
 
 	json.stories tracker.stories do |story|
-		json.extract! story, :id, :title, :description, :tracker_id, :ord,
-		:points, :story_type, :created_at, :updated_at
+		json.extract! story, :id, :title, :description, :tracker_id, :ord, :points, :story_type, :state, :created_at, :updated_at
 	end
 end
 

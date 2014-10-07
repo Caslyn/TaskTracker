@@ -54,7 +54,7 @@ module Api
 
 		def story_params
 			params.require(:story).permit(:title, :description, :tracker_id,
-			:ord, :points, :story_type)
+			:ord, :points, :story_type, :state)
 		end
 	end
 end

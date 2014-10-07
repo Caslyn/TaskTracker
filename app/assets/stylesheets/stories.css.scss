@@ -39,6 +39,19 @@ button.add-story {
 	text-decoration: none;
 	text-align: center;
 	font-size: 14px;
+	display: inline-block;
+}
+
+.state.btn {
+	display: inline-block;
+	float: right;
+	height: 25px;
+	margin: 8px;
+
+	&:hover {
+		background-position: 0;
+		transition: 0;
+	}
 }
 
 li.story-attrs > p {

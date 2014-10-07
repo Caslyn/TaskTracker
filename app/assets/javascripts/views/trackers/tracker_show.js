@@ -127,7 +127,6 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		var story = oldStories.get(storyId);
 		oldStories.remove(story);
 		story.set('tracker_id', this.model.id);
-
 		var successCallback = function(){
 			this.surgicallyInsertStory(story, $storyDisplay)
 		}
@@ -141,8 +140,12 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		//addStory method to be called
 		this.collection.add(story, { silent: true });
 		//create a new view for the story we are adding
+		var week = this.displayWeek();
+		var points = this.sumPoints();
 		var newStoryView = new TaskTracker.Views.StoryShow({
-			model: story
+			model: story,
+			week: week,
+			points: points,
 		}).render();
 		//insert this new view's $el after the ghost
 		newStoryView.$el.insertAfter(ghost);
