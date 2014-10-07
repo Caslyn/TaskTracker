@@ -14,6 +14,28 @@
 	}
 }
 
+.story-totals {
+	background-color: #f6eadf;
+	height: 28px;
+
+	div.week-display {
+		float: left;
+		margin-left: 10px;
+		p {
+			margin-top: 5px;
+			margin-bottom: 0;
+		}
+	}
+	div.point-display {
+		float: right;
+		margin-right: 10px;
+		p {
+			margin-top: 5px;
+			margin-bottom: 0;
+		}
+	}
+}
+
 .active {
 	padding: 0px;
 	float: left;

@@ -17,7 +17,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		this.collection = this.model.stories();
 
 		this.listenTo(this.model, 'change', this.render);
-		this.listenTo(this.collection, 'remove', this.render);
+		this.listenTo(this.collection, 'remove change', this.render);
 		this.listenTo(this.collection, 'add', this.addStory);
 	},
  
@@ -36,12 +36,17 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 	},
 	render: function() {
 		var displayWeek = this.displayWeek();
+		var pointTotal = this.sumPoints();
 		var renderedContent = this.template({ 
 			tracker: this.model, 
-			week: displayWeek
+			collection: this.collection,
+			week: displayWeek,
+			points: pointTotal,
 		});
+
 		renderedContent = this.parseView(renderedContent);
 		this.$el.html(renderedContent);
+		
 		this.delegateEvents();
 		this.renderStories();
 		return this;
@@ -51,6 +56,22 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		this.$('.story-wrapper').sortable({ 
 			connectWith: '.story-wrapper'
 		});
+	},
+
+	sumPoints: function() {
+		var sum = 0;
+		this.collection.each(function(story) {
+			if (story.get('points') === null) {
+				sum += 0;
+			} else {
+				sum += parseInt(story.get('points'));
+			}
+		});
+
+		var noun = sum != 1 ? "Points" : "Point"
+		if (this.collection.length > 0) {
+			return "<p class='showPoints'>" + sum + " " + noun + "</p>";
+		}
 	},
 
 	displayWeek: function() {
@@ -66,9 +87,7 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 
 		if (this.collection.length > 0) {
 			return "<p class='showWeek'>week " + weekNum + " | " + day + "</p>";
-		} else {
-			return;
-		}
+		} 
 	},
 
 	renderStoryForm: function(event) {
@@ -133,5 +152,6 @@ TaskTracker.Views.TrackerShow = Backbone.CompositeView.extend({
 		ghost.remove();
 		//then update the ords
 		this.saveOrds();
+		this.render();
 	},
 });

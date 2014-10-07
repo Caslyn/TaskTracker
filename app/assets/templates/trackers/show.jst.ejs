@@ -3,7 +3,12 @@
 		<h5 class="tracker-title panel-title"><%= tracker.escape('title') %></h5>
 		<span class="glyphicon glyphicon-plus add-story"></span>
 	</div>
-	<div class="week-display"><%= week %></div>
+		<% if (collection.length > 0) { %>
+			<div class="story-totals">
+				<div class="week-display"><%= week %></div>
+				<div class="point-display"><%= points %></div>
+			</div>
+		<% } %>
 	<div class="story-form"></div>
  	
 	<div class="story-wrapper story-display"></div>
