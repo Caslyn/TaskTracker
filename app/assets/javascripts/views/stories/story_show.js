@@ -35,7 +35,7 @@ TaskTracker.Views.StoryShow = Backbone.CompositeView.extend({
 		var $currentTarget = $(event.currentTarget);
 		// save state to reject/accept based on user selection
 		if ($currentTarget.hasClass("reject")) {
-			this.saveState("reject");
+			this.saveState("restart");
 			$currentTarget.remove();
 			return;
 		} else if ($currentTarget.hasClass("accept")) {

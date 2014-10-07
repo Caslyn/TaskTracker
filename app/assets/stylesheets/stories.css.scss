@@ -33,6 +33,28 @@ button.add-story {
 	border-bottom-color: #DDD;
 	border-radius: 2px;
 	color: black;
+
+	&:hover {
+		cursor: move; 
+	}
+
+	button {
+		border-radius: 5px;
+	}
+}
+
+.story-title.finish, .story-title.deliver {
+	background-color: #f3f3d1;
+	-webkit-box-shadow: inset 1px 0px 14px 5px rgba(230,230,179,1);
+	-moz-box-shadow: inset 1px 0px 14px 5px rgba(230,230,179,1);
+	box-shadow: inset 1px 0px 14px 5px rgba(230,230,179,1);
+}
+
+.story-title.complete {
+	background-color: #daebcf;
+	-webkit-box-shadow: inset 1px 0px 14px 5px rgba(191,214,175,1);
+	-moz-box-shadow: inset 1px 0px 14px 5px rgba(191,214,175,1);
+	box-shadow: inset 1px 0px 14px 5px rgba(191,214,175,1);
 }
 
 .title {
