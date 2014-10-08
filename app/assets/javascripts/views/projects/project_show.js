@@ -13,12 +13,11 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 	
 	initialize: function() {
 		this.listenTo(this.model, 'sync', this.render);
-
 		this.collection = this.model.trackers();
-
 		this.collection.each(this.addTracker.bind(this));
 		this.listenTo(this.collection, 'add', this.addTracker);
 		this.listenTo(this.collection, 'remove', this.removeTracker);
+		setTimeout(this.showModal, 800)
 	},
 
 	render: function() {
@@ -27,6 +26,10 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.attachSubviews();
 		this.saveOrds();
 		return this;
+	},
+
+	showModal: function() {
+	 this.$('#projectShowModal').modal();
 	},
 
 	toggleTracker: function(event) {

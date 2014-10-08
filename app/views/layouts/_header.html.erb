@@ -29,8 +29,7 @@
 			 <% else %>
 			 	<div class="auth-options" >
 				 <!-- sign in option -->
-				   <button type="button" class="btn btn-default btn-lrg" id="signin-link"><%= link_to "Sign In", new_session_url, :remote => true,
-				   				'data-toggle' => 'modal', 'data-target' => '#signInModal'   %></button>
+				   <button type="button" class="btn btn-default btn-lrg" id="signin-link"><%= link_to "Sign In", new_session_url, :remote => true,'data-toggle' => 'modal', 'data-target' => '#signInModal'   %></button>
 				  <!-- sign up option -->
 				 <button type="button" class="btn btn-default btn-lrg" id="signup-link"><%= link_to "Sign Up", new_user_url, :remote => true, 'data-toggle' => 'modal', 'data-target' => '#signUpModal' %></button>
 				</div>
