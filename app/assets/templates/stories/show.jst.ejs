@@ -1,6 +1,6 @@
 <div class='story-title <%=story.get('state') %>'>
 		<span class="glyphicon glyphicon-cog edit-story"></span>
-		<span class="glyphicon glyphicon-th-large show-modal"></span>
+		<span class="glyphicon glyphicon-th-large show-modal window-icon"></span>
 
 		<h4 class="title"><%= story.escape('title') %></h4>
 		<button type="button" 
@@ -24,6 +24,10 @@
 					<li class="list-group-item story-attrs">
 						<p>Type</p>
 						<p class="show-attr"><%= story.escape('story_type') %></p>
+					</li>
+					<li class="list-group-item show-description">
+						<p>Description</p>
+						<p class="description"><%= story.escape('description') %></p>
 					</li>
 				</ul>
 			</div>

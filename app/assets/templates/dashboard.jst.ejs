@@ -11,7 +11,8 @@
 				<h3 class="project-title panel-title"><a href="/#/projects/<%= project.id %>"><%= project.escape('title') %></a></h3>
 				<button class="destroy btn btn-default btn-xs" data-id="<%= project.id %>">&times;</button>
 			</div>
-			<div class="panel-body">
+			<div class="panel-body project-description">
+					<p><%= project.escape('description') %></p>
 			</div>
 			</div>
 		<% }) %>

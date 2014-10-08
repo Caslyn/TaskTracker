@@ -34,12 +34,12 @@ TaskTracker.Views.StoryShow = Backbone.CompositeView.extend({
 		event.preventDefault();
 		var $currentTarget = $(event.currentTarget);
 		// save state to reject/accept based on user selection
-		if ($currentTarget.hasClass("reject")) {
+		if ($currentTarget.hasClass("rejected")) {
 			this.saveState("restart");
 			$currentTarget.remove();
 			return;
-		} else if ($currentTarget.hasClass("accept")) {
-			this.saveState("complete");
+		} else if ($currentTarget.hasClass("accepted")) {
+			this.saveState("completed");
 			return;
 		}
 
@@ -49,9 +49,9 @@ TaskTracker.Views.StoryShow = Backbone.CompositeView.extend({
 		// configure buttons if the next state can be either accept or reject
 		if (nextState.length > 1) {
 			var secondButton = event.currentTarget.cloneNode();
-			$(secondButton).html("reject").addClass("reject");
+			$(secondButton).html("rejected").addClass("rejected");
 			$currentTarget.parent().append(secondButton);
-			$currentTarget.html("accept").addClass("accept");
+			$currentTarget.html("accepted").addClass("accepted");
 		} else {
 			$currentTarget.text(nextState[0]);
 			this.saveState(nextState[0]);

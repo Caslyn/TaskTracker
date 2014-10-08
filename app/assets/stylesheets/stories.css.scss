@@ -50,18 +50,21 @@ button.add-story {
 	box-shadow: inset 1px 0px 14px 5px rgba(230,230,179,1);
 }
 
-.story-title.complete {
+.story-title.completed {
 	background-color: #daebcf;
 	-webkit-box-shadow: inset 1px 0px 14px 5px rgba(191,214,175,1);
 	-moz-box-shadow: inset 1px 0px 14px 5px rgba(191,214,175,1);
 	box-shadow: inset 1px 0px 14px 5px rgba(191,214,175,1);
 }
+.window-icon {
+	margin-right: 0
+}
 
-.title {
+h4.title {
 	text-decoration: none;
-	text-align: center;
 	font-size: 14px;
 	display: inline-block;
+	text-align: left;
 }
 
 .state.btn {
