@@ -75,17 +75,19 @@ body {
 
 
 	.carousel {
+		position: fixed;
 		padding: 0 30px;
 
 		position: absolute;
 		right: 75px;
 		display: inline-block;
 		margin-top: 25px;
-		height: 260px;
-		width: 700px;
+		height: 420px;
+		width: 860px;
 
-		.item {
-			width: 100%;
+		.item img{
+			width: 860px;
+			height: 420px;
 		}
 
 		.carousel-control {
