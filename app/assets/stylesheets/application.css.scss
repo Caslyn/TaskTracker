@@ -75,15 +75,14 @@ body {
 
 
 	.carousel {
-		position: fixed;
 		padding: 0 30px;
 
-		position: absolute;
+		position: fixed;
 		right: 75px;
 		display: inline-block;
 		margin-top: 25px;
-		height: 420px;
-		width: 860px;
+		height: 450px;
+		width: 800px;
 
 		.item img{
 			width: 860px;
