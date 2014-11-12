@@ -17,7 +17,8 @@ TaskTracker.Views.ProjectShow = Backbone.CompositeView.extend({
 		this.collection.each(this.addTracker.bind(this));
 		this.listenTo(this.collection, 'add', this.addTracker);
 		this.listenTo(this.collection, 'remove', this.removeTracker);
-		setTimeout(this.showModal, 800)
+		// Uncomment to populate tutorial modal
+		// setTimeout(this.showModal, 800)
 	},
 
 	render: function() {
