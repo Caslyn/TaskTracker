@@ -10,12 +10,12 @@ user3.save()
 # Projects
 
 #user2 (guest)
-project1 = user2.projects.new(title: 'Creating This Project', 
-		 description: "A look at how I approached this project's 'MVP'", user_id: user2.id)
-project2 = user2.projects.new(title: 'Learn About Task Tracker!', 
-		 description: 'Click me to find out how awesome Task Tracker is', user_id: user2.id)
+# project1 = user2.projects.new(title: 'Creating This Project', 
+# 		 description: "A look at how I approached this project's 'MVP'", user_id: user2.id)
+project2 = user2.projects.new(title: 'Learn About Task Tracker', 
+		 description: "See this example project board or create your own from scratch", user_id: user2.id)
 
-project1.save()
+# project1.save()
 project2.save()
 
 # user1 (caslyn)
@@ -74,15 +74,15 @@ tracker15.save()
 tracker16.save()
 
 # App Academy Final Project
-tracker17 = project1.trackers.new(project_id: project1.id, title: "icebox", visible: true, ord:3)
-tracker18 = project1.trackers.new(project_id: project1.id, title: "backlog", visible: true, ord:2)
-tracker19 = project1.trackers.new(project_id: project1.id, title: "current", visible: true, ord: 1)
-tracker20 = project1.trackers.new(project_id: project1.id, title: "done", visible: false, ord: 0)
+# tracker17 = project1.trackers.new(project_id: project1.id, title: "icebox", visible: true, ord:3)
+# tracker18 = project1.trackers.new(project_id: project1.id, title: "backlog", visible: true, ord:2)
+# tracker19 = project1.trackers.new(project_id: project1.id, title: "current", visible: true, ord: 1)
+# tracker20 = project1.trackers.new(project_id: project1.id, title: "done", visible: false, ord: 0)
 
-tracker17.save()
-tracker18.save()
-tracker19.save()
-tracker20.save()
+# tracker17.save()
+# tracker18.save()
+# tracker19.save()
+# tracker20.save()
 
 #Learn About Task Tracker!: Stories
 
@@ -232,29 +232,29 @@ story13.save()
 story14.save()
 
 # App Academy Final Project: story
-story15 = tracker17.stories.new(title: "Auth", description: "Users/Sessions", tracker_id: tracker17.id,
-										 ord: 0, points: 0, story_type: "chore")
-story16 = tracker18.stories.new(title: "Projects", description: "A Project holds all its project data", tracker_id: tracker18.id,
-										 ord: 0, points: 2, story_type: "feature")
-story17 = tracker19.stories.new(title: "Trackers", description: "A Tracker has many Projects / Tracker has many Stories", tracker_id: tracker19.id,
-										 ord: 0, points: 2, story_type: "feature")
-story18 = tracker20.stories.new(title: "Stories", description: "A Story represents an individual task", tracker_id: tracker20.id,
-										 ord: 0, points: 2, story_type: "feature")
-story19 = tracker17.stories.new(title: "Drag/Drop/Sortable", description: "Drag, drop, and sort Stories", tracker_id: tracker17.id,
-										 ord: 0, points: 3, story_type: "feature")
-story20 = tracker18.stories.new(title: "Additional Stories", description: "Add in Points/Feature attributes to Stories ", tracker_id: tracker18.id,
-										 ord: 0, points: 2, story_type: "chore")
-story21 = tracker19.stories.new(title: "Group Stories", description: "Group Stories into Weeks", tracker_id: tracker19.id,
-										 ord: 0, points: 3, story_type: "feature")
-story22 = tracker20.stories.new(title: "CSS Wonderfulness", description: "Improve styling", tracker_id: tracker20.id,
-										 ord: 0, points: 2, story_type: "chore")
+# story15 = tracker17.stories.new(title: "Auth", description: "Users/Sessions", tracker_id: tracker17.id,
+# 										 ord: 0, points: 0, story_type: "chore")
+# story16 = tracker18.stories.new(title: "Projects", description: "A Project holds all its project data", tracker_id: tracker18.id,
+# 										 ord: 0, points: 2, story_type: "feature")
+# story17 = tracker19.stories.new(title: "Trackers", description: "A Tracker has many Projects / Tracker has many Stories", tracker_id: tracker19.id,
+# 										 ord: 0, points: 2, story_type: "feature")
+# story18 = tracker20.stories.new(title: "Stories", description: "A Story represents an individual task", tracker_id: tracker20.id,
+# 										 ord: 0, points: 2, story_type: "feature")
+# story19 = tracker17.stories.new(title: "Drag/Drop/Sortable", description: "Drag, drop, and sort Stories", tracker_id: tracker17.id,
+# 										 ord: 0, points: 3, story_type: "feature")
+# story20 = tracker18.stories.new(title: "Additional Stories", description: "Add in Points/Feature attributes to Stories ", tracker_id: tracker18.id,
+# 										 ord: 0, points: 2, story_type: "chore")
+# story21 = tracker19.stories.new(title: "Group Stories", description: "Group Stories into Weeks", tracker_id: tracker19.id,
+# 										 ord: 0, points: 3, story_type: "feature")
+# story22 = tracker20.stories.new(title: "CSS Wonderfulness", description: "Improve styling", tracker_id: tracker20.id,
+# 										 ord: 0, points: 2, story_type: "chore")
 
-story15.save()
-story16.save()
-story17.save()
-story18.save()
-story19.save()
-story20.save()
-story21.save()
-story22.save()
+# story15.save()
+# story16.save()
+# story17.save()
+# story18.save()
+# story19.save()
+# story20.save()
+# story21.save()
+# story22.save()
 
